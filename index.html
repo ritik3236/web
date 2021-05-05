@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+
+  <body>
+    <section>
+      <div class="container">
+        <div>
+          <div class="square" style="--i: 0">R</div>
+          <div class="square" style="--i: 2">I</div>
+          <div class="square" style="--i: 4">T</div>
+          <div class="square" style="--i: 6">I</div>
+          <div class="square" style="--i: 8">K</div>
+        </div>
+        <header>
+          <div>
+            <a href="#" class="logo">Welcome.</a>
+            <div class="menu-btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <ul class="navigation">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a class="">Q.Paper</a></li>
+            <li><a class="">Solution</a></li>
+            <li><a class="">News</a></li>
+            <li class="drop-down" ><a class="">More</a>
+            <ul class="drop-item">
+              <li><a href="">Hi</a></li>
+              <li><a href="">hello</a></li>
+            </ul></li>
+          </ul>
+        </header>
+      </div>
+    </section>
+    <section></section>
+    <script>
+      const menuBtn = document.querySelector(".menu-btn");
+      const navBtn = document.querySelector(".navigation");
+      let menuOpen = false;
+      menuBtn.addEventListener("click", () => {
+        if (!menuOpen) {
+          menuBtn.classList.add("open");
+          navBtn.classList.add("nav-hide");
+          menuOpen = true;
+        } else {
+          menuBtn.classList.remove("open");
+          navBtn.classList.remove("nav-hide");
+          menuOpen = false;
+        }
+      });
+    </script>
+  </body>
+</html>
