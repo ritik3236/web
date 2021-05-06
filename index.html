@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon_io/site.webmanifest" />
+  </head>
+
+  <body>
+    <section>
+      <div class="container">
+        <div>
+          <div class="square" style="--i: 0">R</div>
+          <div class="square" style="--i: 2">I</div>
+          <div class="square" style="--i: 4">T</div>
+          <div class="square" style="--i: 6">I</div>
+          <div class="square" style="--i: 8">K</div>
+        </div>
+        <header>
+          <div>
+            <a href="#" class="logo">Welcome.</a>
+            <div class="menu-btn"><span></span><span></span><span></span></div>
+          </div>
+          <ul class="navigation">
+            <li><a class="">Q.Paper</a></li>
+            <li><a class="">Solution</a></li>
+            <li><a class="">News</a></li>
+            <li><a class="">About Us</a></li>
+            <li class=""><a class="">More</a></li>
+          </ul>
+        </header>
+      </div>
+    </section>
+    <section></section>
+
+    <!-- Script -->
+
+    <script>
+      const menuBtn = document.querySelector(".menu-btn");
+      const navBtn = document.querySelector(".navigation");
+      let menuOpen = false;
+      menuBtn.addEventListener("click", () => {
+        if (!menuOpen) {
+          menuBtn.classList.add("open");
+          navBtn.classList.add("nav-hide");
+          menuOpen = true;
+        } else {
+          menuBtn.classList.remove("open");
+          navBtn.classList.remove("nav-hide");
+          menuOpen = false;
+        }
+      });
+    </script>
+  </body>
+</html>
