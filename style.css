@@ -209,7 +209,6 @@ header ul li a.active {
 
 /* ===== MEDIA QUERIES =====*/
 
-
 @media screen and (max-width: 768px) {
     header {
         flex-direction: column;
