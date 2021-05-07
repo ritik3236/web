@@ -231,8 +231,10 @@ header {
 /* ===== MEDIA QUERIES =====*/
 
 @media screen and (max-width: 768px) {
-    body section:nth-child(1) {
-        padding: 6rem 4vw 4vw 4vw;
+    body {
+        section:nth-child(1) {
+            padding: 6rem 4vw 4vw 4vw;
+        }
     }
 
     header {
@@ -271,17 +273,20 @@ header {
     }
 
     .menu-btn.open {
-        span:nth-child(2) {
-            transform: translateX(-10px);
-            background: transparent;
-        }
+        span {
 
-        span:nth-child(1) {
-            transform: rotate(45deg) translate(3px, 4px);
-        }
+            &:nth-child(2) {
+                transform: translateX(-10px);
+                background: transparent;
+            }
 
-        span:nth-child(3) {
-            transform: rotate(-45deg) translate(3px, -4px);
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(3px, 4px);
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(3px, -4px);
+            }
         }
     }
 
