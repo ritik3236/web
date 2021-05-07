@@ -53,7 +53,6 @@ body {
 /*===== LAYOUT =====*/
 body section:nth-child(1) {
     position: relative;
-    display: flex;
     padding: 7rem 4vw 4vw 4vw;
     min-height: 100vh;
     /* background: antiquewhite; */
@@ -66,22 +65,8 @@ body section:nth-child(1) {
 body section:nth-child(2) {
     min-height: 100vh;
 }
-
-.container {
-    /* top: 55px; */
-    position: absolute;
-    /* padding: 50px; */
-    display: flex;
-    /* border-radius: 20px; */
-    /* align-items: center; */
-    /* width: calc(100% - 100px); */
-    /* min-height: calc(100vh - 55px); */
-    justify-content: space-between;
-    /* background: rgba(255, 255, 255, 0.5); */
-    /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); */
-}
-
-.container .square {
+/* ===== Squares ===== */
+.square {
     position: fixed;
     display: flex;
     justify-content: center;
@@ -100,35 +85,35 @@ body section:nth-child(2) {
 }
 
 
-.container .square:nth-child(1) {
+.square:nth-child(1) {
     top: 58%;
     left: 10%;
     height: 75px;
     width: 75px;
 }
 
-.container .square:nth-child(2) {
+.square:nth-child(2) {
     top: 20%;
     left: 20%;
     height: 80px;
     width: 80px;
 }
 
-.container .square:nth-child(3) {
+.square:nth-child(3) {
     top: 49%;
     left: 49%;
     height: 65px;
     width: 65px;
 }
 
-.container .square:nth-child(4) {
+.square:nth-child(4) {
     left: 72%;
     height: 93px;
     width: 93px;
     top: 71%;
 }
 
-.container .square:nth-child(5) {
+.square:nth-child(5) {
     top: 60px;
     right: 29px;
     height: 90px;
@@ -222,14 +207,14 @@ header ul li a.active {
     align-items: center;
 }
 
-.about {
+.content .about {
     display: flex;
     flex-direction: column;
     gap: 10px;
     /* align-items: center; */
 }
 
-.illustration {
+.content .illustration {
     width: 42vw;
     transform: translate(20px);
 }

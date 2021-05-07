@@ -1,95 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VeerShiava Collage Ballary</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="favicon_io/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="favicon_io/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="favicon_io/favicon-16x16.png"
-    />
-    <link rel="manifest" href="favicon_io/site.webmanifest" />
-  </head>
 
-  <body>
-    <section>
-      <div class="container">
-        <!-- <div>
-          <div class="square" style="--i: 0">R</div>
-          <div class="square" style="--i: 2">I</div>
-          <div class="square" style="--i: 4">T</div>
-          <div class="square" style="--i: 6">I</div>
-          <div class="square" style="--i: 8">K</div>
-        </div> -->
-        <header>
-          <div>
-            <a href="#" class="logo">
-              <img src="/favicon_io/student 32x32.png" />VSC</a
-            >
-            <div class="menu-btn"><span></span><span></span><span></span></div>
-          </div>
-          <ul class="navigation">
-            <li><a class="active">Q.Paper</a></li>
-            <li><a class="">Solution</a></li>
-            <li><a class="">News</a></li>
-            <li><a class="">About Us</a></li>
-            <li class=""><a class="">More</a></li>
-          </ul>
-        </header>
-      </div>
-      <div class="content">
-        <div class="about">
-          <p>- Learn like a Pro</p>
-          <h1>
-            Try to not waste your valuable time to finding notes,
-            get free notes for every subject just at one click. 
-          </h1>
-          <p>
-            This Website made by students for students,<br> Here you will find Question paper, notes, Solutions by teacher & student, Imp news as well as Books.
-          </p>
-        </div>
-        <div>
-          <img
-            class="illustration"
-            src="Illustration/undraw_book_lover_mkck.svg"
-          />
-        </div>
-      </div>
-    </section>
-    <section>
-      <h1>good morning</h1>
-    </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VeerShiava Collage Ballary</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png" />
+  <link rel="manifest" href="favicon_io/site.webmanifest" />
+  <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
+    integrity="sha384-haqrlim99xjfMxRP6EWtafs0sB1WKcMdynwZleuUSwJR0mDeRYbhtY+KPMr+JL6f" crossorigin="anonymous">
+  </script>
+</head>
 
-    <!-- Script -->
-    <script>
-      const menuBtn = document.querySelector(".menu-btn");
-      const navBtn = document.querySelector(".navigation");
-      let menuOpen = false;
-      menuBtn.addEventListener("click", () => {
-        if (!menuOpen) {
-          menuBtn.classList.add("open");
-          navBtn.classList.add("nav-hide");
-          menuOpen = true;
-        } else {
-          menuBtn.classList.remove("open");
-          navBtn.classList.remove("nav-hide");
-          menuOpen = false;
-        }
-      });
-    </script>
-  </body>
+<body>
+  <section>
+    <header class="navbar">
+      <div>
+        <a href="#" class="logo">
+          <img src="/favicon_io/student 32x32.png" />VSC</a>
+        <div class="menu-btn"><span></span><span></span><span></span></div>
+      </div>
+      <ul class="navigation">
+        <li><a class="active">Q.Paper</a></li>
+        <li><a class="">Solution</a></li>
+        <li><a class="">News</a></li>
+        <li><a class="">About Us</a></li>
+        <li class=""><a class="">More</a></li>
+      </ul>
+    </header>
+    <div class="squares">
+      <div class="square" style="--i: 0">R</div>
+      <div class="square" style="--i: 2">I</div>
+      <div class="square" style="--i: 4">T</div>
+      <div class="square" style="--i: 6">I</div>
+      <div class="square" style="--i: 8">K</div>
+    </div>
+    <div class="content">
+      <div class="about">
+        <p>- Learn like a Pro</p>
+        <h1>
+          Try to not waste your valuable time to finding notes,
+          get free notes for every subject just at one click.
+        </h1>
+        <p>
+          This Website made by students for students,<br> Here you will find Question paper, notes, Solutions by teacher
+          & student, Imp news as well as Books.
+        </p>
+      </div>
+      <div>
+        <img class="illustration" src="Illustration/undraw_book_lover_mkck.svg" />
+      </div>
+    </div>
+    <div class="social">
+    </div>
+  </section>
+
+  <section>
+    <h1>good morning</h1>
+  </section>
+
+  <!-- Script -->
+  <script>
+    const menuBtn = document.querySelector(".menu-btn");
+    const navBtn = document.querySelector(".navigation");
+    let menuOpen = false;
+    menuBtn.addEventListener("click", () => {
+      if (!menuOpen) {
+        menuBtn.classList.add("open");
+        navBtn.classList.add("nav-hide");
+        menuOpen = true;
+      } else {
+        menuBtn.classList.remove("open");
+        navBtn.classList.remove("nav-hide");
+        menuOpen = false;
+      }
+    });
+  </script>
+</body>
+
 </html>
