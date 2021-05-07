@@ -228,8 +228,7 @@ header ul li a {
   border-radius: 25px;
 }
 
-header ul li a:hover,
-header ul li a.active {
+header ul li a:hover, header ul li a.active {
   background: rgba(255, 255, 255, 0.349);
   /* color: greenyellow; */
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);

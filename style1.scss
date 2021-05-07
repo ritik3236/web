@@ -50,19 +50,23 @@
 body {
     font-weight: 500;
     font-size: var(--normal-font-size);
-    section:nth-child(1) {
-        position: relative;
-        padding: 7rem 4vw 4vw 4vw;
-        min-height: 100vh;
-        /* background: antiquewhite; */
-        background: var(--backpic);
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-    }
 
-    section:nth-child(2) {
-        min-height: 100vh;
+    section {
+
+        &:nth-child(1) {
+            position: relative;
+            padding: 7rem 4vw 4vw 4vw;
+            min-height: 100vh;
+            /* background: antiquewhite; */
+            background: var(--backpic);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        &:nth-child(2) {
+            min-height: 100vh;
+        }
     }
 }
 
@@ -185,13 +189,13 @@ header {
                 cursor: pointer;
                 transition: all .3s ease-in-out;
                 border-radius: 25px;
-            }
 
-            a:hover,
-            a.active {
-                background: rgba(255, 255, 255, 0.349);
-                /* color: greenyellow; */
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                &:hover,
+                &.active {
+                    background: rgba(255, 255, 255, 0.349);
+                    /* color: greenyellow; */
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                }
             }
         }
     }
