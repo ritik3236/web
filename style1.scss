@@ -45,25 +45,25 @@
     font-family: var(--body-font);
 }
 
+
+/*===== LAYOUT =====*/
 body {
     font-weight: 500;
     font-size: var(--normal-font-size);
-}
+    section:nth-child(1) {
+        position: relative;
+        padding: 7rem 4vw 4vw 4vw;
+        min-height: 100vh;
+        /* background: antiquewhite; */
+        background: var(--backpic);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
 
-/*===== LAYOUT =====*/
-body section:nth-child(1) {
-    position: relative;
-    padding: 7rem 4vw 4vw 4vw;
-    min-height: 100vh;
-    /* background: antiquewhite; */
-    background: var(--backpic);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
-
-body section:nth-child(2) {
-    min-height: 100vh;
+    section:nth-child(2) {
+        min-height: 100vh;
+    }
 }
 
 /* ===== Squares ===== */
@@ -83,42 +83,40 @@ body section:nth-child(2) {
     border-radius: 10px;
     animation: animate 10s linear calc(-1s*var(--i)) infinite;
 
-}
+    &:nth-child(1) {
+        top: 58%;
+        left: 10%;
+        height: 75px;
+        width: 75px;
+    }
 
+    &:nth-child(2) {
+        top: 20%;
+        left: 20%;
+        height: 80px;
+        width: 80px;
+    }
 
-.square:nth-child(1) {
-    top: 58%;
-    left: 10%;
-    height: 75px;
-    width: 75px;
-}
+    &:nth-child(3) {
+        top: 49%;
+        left: 49%;
+        height: 65px;
+        width: 65px;
+    }
 
-.square:nth-child(2) {
-    top: 20%;
-    left: 20%;
-    height: 80px;
-    width: 80px;
-}
+    &:nth-child(4) {
+        left: 72%;
+        height: 93px;
+        width: 93px;
+        top: 71%;
+    }
 
-.square:nth-child(3) {
-    top: 49%;
-    left: 49%;
-    height: 65px;
-    width: 65px;
-}
-
-.square:nth-child(4) {
-    left: 72%;
-    height: 93px;
-    width: 93px;
-    top: 71%;
-}
-
-.square:nth-child(5) {
-    top: 60px;
-    right: 29px;
-    height: 90px;
-    width: 90px;
+    &:nth-child(5) {
+        top: 60px;
+        right: 29px;
+        height: 90px;
+        width: 90px;
+    }
 }
 
 @keyframes animate {

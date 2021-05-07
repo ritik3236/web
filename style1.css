@@ -41,12 +41,12 @@
   font-family: var(--body-font);
 }
 
+/*===== LAYOUT =====*/
 body {
   font-weight: 500;
   font-size: var(--normal-font-size);
 }
 
-/*===== LAYOUT =====*/
 body section:nth-child(1) {
   position: relative;
   padding: 7rem 4vw 4vw 4vw;
