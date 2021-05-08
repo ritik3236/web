@@ -26,6 +26,7 @@ body {
 }
 
 body section:nth-child(1) {
+  display: flex;
   position: relative;
   padding: 7rem 4vw 4vw 4vw;
   min-height: 100vh;
@@ -245,6 +246,7 @@ header ul li a:hover, header ul li a.active {
 @media screen and (max-width: 480px) {
   body section:nth-child(1) {
     overflow: hidden;
+    display: block;
     padding: 6rem 4vw 4vw 4vw;
   }
   header {

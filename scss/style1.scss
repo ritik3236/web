@@ -10,6 +10,7 @@ body {
     section {
 
         &:nth-child(1) {
+            display: flex;
             position: relative;
             padding: 7rem 4vw 4vw 4vw;
             min-height: 100vh;
