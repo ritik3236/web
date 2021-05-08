@@ -1,55 +1,10 @@
-/*===== GOOGLE FONTS =====*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-
-/*===== VARIABLES CSS =====*/
-:root {
-    --header-height: 3rem;
-
-    /*===== Colors & Background =====*/
-    /* --first-color: #FCA4A6; */
-    --first-color: #7f139ade;
-    --first-color-dark: #C1576A;
-    /* --first-color-darken: #A83E51; */
-    --first-color-darken: #9b1abb;
-    --white-color: #FCF8F8;
-    --invert-white-color: #030707;
-    --ham-color: #c983c7bf;
-    --backpic: url(back.jpg);
-
-    /*===== Font and typography =====*/
-    --body-font: 'Poppins', sans-serif;
-    --normal-font-size: .938rem;
-    --medium-font-size: 1.2rem;
-    --big-font-size: 2.5rem;
-
-
-    /*===== z index =====*/
-    --z-fixed: 100;
-}
-
-@media screen and (max-width: 768px) {
-    :root {
-        --normal-font-size: 1rem;
-        --medium-font-size: 1.5rem;
-        --big-font-size: 2.5rem;
-    }
-}
-
-/*===== BASE =====*/
-*,
-::before,
-::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--body-font);
-}
-
+@import 'variables';
+@import 'mixins';
 
 /*===== LAYOUT =====*/
 body {
-    font-weight: 500;
-    font-size: var(--normal-font-size);
+    font-weight: $font-weight;
+    font-size: $normal-font-size;
 
     section {
 
@@ -57,11 +12,7 @@ body {
             position: relative;
             padding: 7rem 4vw 4vw 4vw;
             min-height: 100vh;
-            /* background: antiquewhite; */
-            background: var(--backpic);
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: $backpic center center fixed;
         }
 
         &:nth-child(2) {
@@ -73,18 +24,11 @@ body {
 /* ===== Squares ===== */
 .square {
     position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: var(--medium-font-size);
     font-family: monospace;
+    @include backBorder(10px);
+    @include flexCenter(row);
     backdrop-filter: blur(5px);
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
+    font-size: var(--medium-font-size);
     animation: animate 10s linear calc(-1s*var(--i)) infinite;
 
     &:nth-child(1) {
@@ -141,37 +85,24 @@ header {
     top: 20px;
     right: 5%;
     left: 5%;
+    z-index: 10;
     display: flex;
     padding: 20px 50px;
     align-items: center;
-    border-radius: 20px;
     backdrop-filter: blur(5px);
     justify-content: space-between;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
-    z-index: 10;
-
-    div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+    @include backBorder(20px);
 
     img {
         height: 30px;
-        margin-right: 2px;
     }
 
     .logo {
         display: flex;
         align-items: center;
-        color: var(--first-color);
-        font-size: var(--medium-font-size);
-        text-decoration: none;
-
+        color: $primary-color;
+        font-size: $medium-font-size;
+        gap: 5px;
     }
 
     ul {
@@ -193,7 +124,6 @@ header {
                 &:hover,
                 &.active {
                     background: rgba(255, 255, 255, 0.349);
-                    /* color: greenyellow; */
                     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
                 }
             }
@@ -227,7 +157,6 @@ header {
 
 
 
-
 /* ===== MEDIA QUERIES =====*/
 
 @media screen and (max-width: 768px) {
@@ -247,12 +176,13 @@ header {
             flex-direction: column;
             position: absolute;
             right: 20px;
+            top: 20px;
         }
 
         span {
             width: 20px;
             height: 3px;
-            background: var(--ham-color);
+            background: $ham-color;
             margin: 1px 1px;
             transition: all .3s ease-in-out;
         }
