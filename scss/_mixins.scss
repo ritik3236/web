@@ -14,6 +14,31 @@
     border-radius: $radius;
 }
 
-@mixin divider($color) {
-    border-top: 3px solid $color;
+@mixin divider($f-color, $l-color ) {
+    background-image: linear-gradient(to right,$f-color, $l-color);
+        border-radius: 1rem;    
+        padding: .1rem 0;
+        position: relative;
+        z-index: 100;
+
+        &:before {
+            border-radius: inherit;
+            background-image: linear-gradient(to right,  $l-color,$f-color);
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            width: 100%;
+            z-index: -100;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        &:hover {
+            &:before {
+                opacity: 1;
+            }
+        }
 }

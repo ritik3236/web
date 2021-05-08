@@ -3,6 +3,7 @@
 @media screen and (max-width: 480px) {
     body {
         section:nth-child(1) {
+            overflow: hidden;
             padding: 6rem 4vw 4vw 4vw;
         }
     }
@@ -73,7 +74,8 @@
         .social-button {
             position: absolute;
             bottom: 16px;
-            left: 11%;
+            left: 9%;
+            z-index: 2;
         }
     }
 }

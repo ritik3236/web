@@ -29,7 +29,7 @@ body {
     @include backBorder(10px);
     @include flexCenter(row);
     backdrop-filter: blur(5px);
-    font-size: var(--medium-font-size);
+    // font-size: var(--medium-font-size);
     // animation: animate 10s linear calc(-1s*var(--i)) infinite;
 
     &:nth-child(1) {
@@ -80,7 +80,7 @@ header {
     align-items: center;
     backdrop-filter: blur(5px);
     justify-content: space-between;
-    @include backBorder(20px);
+    @include backBorder(15px);
 
     img {
         height: 30px;
@@ -138,21 +138,48 @@ header {
         transform: translate(20px);
     }
 
+
     .divider {
-        @include divider($divider-color);
+        @include divider($divider-color-f, $divider-color-l);
         margin: 19px 17vw 19px 0;
     }
 
+
     .social-icon {
         display: flex;
-        gap: 10px;
+        gap: 15px;
 
         a {
-
+            font-size: 1.5rem;
+            color: $social-icon-color;
             width: 50px;
             height: 50px;
+            backdrop-filter: blur(5px);
             @include flexCenter(row);
             @include backBorder(4px);
+            transition: all .4s ease-in-out;
+            overflow: hidden;
+
+            &:hover {
+                color: $social-icon-color-hover;
+                transform: translateY(-20px);
+
+                &::before {
+                    transform: skewX(45deg) translateX(-100px);
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 60%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.5);
+                transform: skewX(45deg) translateX(100px);
+                transition: .5s;
+            }
         }
     }
 }

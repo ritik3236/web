@@ -51,7 +51,6 @@ body section:nth-child(2) {
   align-items: center;
   flex-direction: row;
   backdrop-filter: blur(5px);
-  font-size: var(--medium-font-size);
 }
 
 .square:nth-child(1) {
@@ -106,7 +105,7 @@ header {
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 header img {
@@ -167,18 +166,44 @@ header ul li a:hover, header ul li a.active {
 }
 
 .content .divider {
-  border-top: 3px solid #8d8ca5;
+  background-image: linear-gradient(to right, #4a4a59, #db56f8);
+  border-radius: 1rem;
+  padding: .1rem 0;
+  position: relative;
+  z-index: 100;
   margin: 19px 17vw 19px 0;
+}
+
+.content .divider:before {
+  border-radius: inherit;
+  background-image: linear-gradient(to right, #db56f8, #4a4a59);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  z-index: -100;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.content .divider:hover:before {
+  opacity: 1;
 }
 
 .content .social-icon {
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 
 .content .social-icon a {
+  font-size: 1.5rem;
+  color: #4b4b5b;
   width: 50px;
   height: 50px;
+  backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,6 +214,29 @@ header ul li a:hover, header ul li a.active {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 4px;
+  transition: all .4s ease-in-out;
+  overflow: hidden;
+}
+
+.content .social-icon a:hover {
+  color: #34325e;
+  transform: translateY(-20px);
+}
+
+.content .social-icon a:hover::before {
+  transform: skewX(45deg) translateX(-100px);
+}
+
+.content .social-icon a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: skewX(45deg) translateX(100px);
+  transition: .5s;
 }
 
 /*===== HOME =====*/
@@ -196,6 +244,7 @@ header ul li a:hover, header ul li a.active {
 /* ===== MEDIA QUERIES =====*/
 @media screen and (max-width: 480px) {
   body section:nth-child(1) {
+    overflow: hidden;
     padding: 6rem 4vw 4vw 4vw;
   }
   header {
@@ -248,7 +297,8 @@ header ul li a:hover, header ul li a.active {
   .content .social-button {
     position: absolute;
     bottom: 16px;
-    left: 11%;
+    left: 9%;
+    z-index: 2;
   }
 }
 
