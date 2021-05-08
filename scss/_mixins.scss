@@ -2,13 +2,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: $direction;    
+    flex-direction: $direction;
 }
-@mixin backBorder($radius){
+
+@mixin backBorder($radius) {
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: $radius;
+}
+
+@mixin divider($color) {
+    border-top: 3px solid $color;
 }

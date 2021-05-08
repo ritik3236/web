@@ -3,18 +3,21 @@
 /*===== VARIABLES CSS =====*/
 
 /*===== Colors & Background =====*/
-$primary-color:red;
-$primary-color-dark:rgb(206, 3, 3);
+$primary-color:#9b1abb;
+$primary-color-dark:#9b1abb;
 $primary-color-darken:rgb(173, 7, 7);
-$secondary-color:rgb(50, 240, 50);
+$secondary-color:#9b1abb;
 $secondary-color-dark:rgb(5, 179, 5);
 $secondary-color-darken:rgb(2, 95, 2);
 $white-color:#FCF8F8;
 $ham-color: #c983c7bf;
+$divider-color:#8d8ca5;
 $backpic: url(/back.jpg);
 
+
 /*===== Font and typography =====*/
-$body-font: 'Poppins',sans-serif;
+$body-font: 'Poppins',
+sans-serif;
 $normal-font-size: .938rem;
 $medium-font-size: 1.2rem;
 $big-font-size: 2.5rem;
@@ -28,6 +31,7 @@ $font-weight:500;
         $big-font-size: 2.5rem;
     }
 }
+
 *,
 ::before,
 ::after {
@@ -37,9 +41,10 @@ $font-weight:500;
     font-family: $body-font;
 }
 
-a{
+a {
     text-decoration: none;
 }
-li{
+
+li {
     list-style: none;
 }

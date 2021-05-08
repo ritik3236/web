@@ -116,7 +116,7 @@ header img {
 header .logo {
   display: flex;
   align-items: center;
-  color: red;
+  color: #9b1abb;
   font-size: 1.2rem;
   gap: 5px;
 }
@@ -131,7 +131,7 @@ header ul li {
 }
 
 header ul li a {
-  color: #32f032;
+  color: #9b1abb;
   padding: 8px 15px;
   cursor: pointer;
   transition: all .3s ease-in-out;
@@ -157,14 +157,44 @@ header ul li a:hover, header ul li a.active {
   gap: 10px;
 }
 
+.content .about h2 {
+  line-height: 2rem;
+}
+
 .content .illustration {
   width: 42vw;
   transform: translate(20px);
 }
 
+.content .divider {
+  border-top: 3px solid #8d8ca5;
+  margin: 19px 17vw 19px 0;
+}
+
+.content .social-icon {
+  display: flex;
+  gap: 10px;
+}
+
+.content .social-icon a {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+}
+
 /*===== HOME =====*/
+/*===== Media Query & Keyframes =====*/
 /* ===== MEDIA QUERIES =====*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   body section:nth-child(1) {
     padding: 6rem 4vw 4vw 4vw;
   }
@@ -209,11 +239,16 @@ header ul li a:hover, header ul li a.active {
   }
   .content {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
   }
   .content .illustration {
     width: 50vw;
     transform: translate(0);
+  }
+  .content .social-button {
+    position: absolute;
+    bottom: 16px;
+    left: 11%;
   }
 }
 
