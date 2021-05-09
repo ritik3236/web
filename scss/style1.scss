@@ -145,45 +145,62 @@ header {
         margin: 19px 17vw 19px 0;
     }
 
+    @include social-icon(50px, 50px);
+}
 
-    .social-icon {
+footer {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: .9rem;
+    font-weight: normal;
+    gap: 15px;
+
+    .foo-about {
         display: flex;
-        gap: 15px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
 
-        a {
-            font-size: 1.5rem;
+        p {
             color: $social-icon-color;
-            width: 50px;
-            height: 50px;
-            backdrop-filter: blur(5px);
-            @include flexCenter(row);
-            @include backBorder(4px);
-            transition: all .4s ease-in-out;
-            overflow: hidden;
+        }
 
-            &:hover {
-                color: $social-icon-color-hover;
-                transform: translateY(-20px);
+        .foo-divider {
+            border-top: 2px solid darkblue;
+        }
 
-                &::before {
-                    transform: skewX(45deg) translateX(-100px);
+        ul {
+            display: flex;
+            justify-content: space-between;
+
+            li {
+                &:not(:last-child) {
+                    border-right: 2px solid darkblue;
+                    margin: 3px 0px;
                 }
-            }
 
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 60%;
-                height: 100%;
-                background: rgba(255, 255, 255, 0.5);
-                transform: skewX(45deg) translateX(100px);
-                transition: .5s;
+                &:last-child {
+                    margin: 3px 0px;
+                }
+
+                a {
+                    margin-right: 3px;
+                    font-size: 11px;
+                    color: $social-icon-color-hover;
+                }
             }
         }
     }
+
+    .foo-follow-visit_us {
+        @include social-icon(30px, 30px)
+    }
 }
+
+
 
 /*===== HOME =====*/
 

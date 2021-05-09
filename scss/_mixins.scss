@@ -19,7 +19,7 @@
         border-radius: 1rem;    
         padding: .1rem 0;
         position: relative;
-        z-index: 100;
+        z-index: 1;
 
         &:before {
             border-radius: inherit;
@@ -41,4 +41,45 @@
                 opacity: 1;
             }
         }
+}
+
+@mixin social-icon($width,$height) {
+    .social-icon {
+        display: flex;
+        gap: 15px;
+
+        a {
+            font-size: 1.5rem;
+            color: $social-icon-color;
+            width: $width;
+            height: $height;
+            backdrop-filter: blur(5px);
+            @include flexCenter(row);
+            @include backBorder(4px);
+            transition: all .4s ease-in-out;
+            overflow: hidden;
+
+            &:hover {
+                color: $social-icon-color-hover;
+                transform: translateY(-20px);
+
+                &::before {
+                    transform: skewX(45deg) translateX(-100px);
+                }
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 60%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.5);
+                transform: skewX(45deg) translateX(100px);
+                transition: .5s;
+            }
+        }
+    }
+    
 }

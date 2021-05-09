@@ -171,7 +171,7 @@ header ul li a:hover, header ul li a.active {
   border-radius: 1rem;
   padding: .1rem 0;
   position: relative;
-  z-index: 100;
+  z-index: 1;
   margin: 19px 17vw 19px 0;
 }
 
@@ -229,6 +229,97 @@ header ul li a:hover, header ul li a.active {
 }
 
 .content .social-icon a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: skewX(45deg) translateX(100px);
+  transition: .5s;
+}
+
+footer {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: .9rem;
+  font-weight: normal;
+}
+
+footer .foo-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+footer .foo-about p {
+  color: #4b4b5b;
+}
+
+footer .foo-about .foo-divider {
+  border-top: 2px solid darkblue;
+}
+
+footer .foo-about ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .foo-about ul li:not(:last-child) {
+  border-right: 2px solid darkblue;
+  margin: 3px 0px;
+}
+
+footer .foo-about ul li:last-child {
+  margin: 3px 0px;
+}
+
+footer .foo-about ul li a {
+  margin-right: 3px;
+  font-size: 11px;
+  color: #34325e;
+}
+
+footer .foo-follow-visit_us .social-icon {
+  display: flex;
+  gap: 15px;
+}
+
+footer .foo-follow-visit_us .social-icon a {
+  font-size: 1.5rem;
+  color: #4b4b5b;
+  width: 30px;
+  height: 30px;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  transition: all .4s ease-in-out;
+  overflow: hidden;
+}
+
+footer .foo-follow-visit_us .social-icon a:hover {
+  color: #34325e;
+  transform: translateY(-20px);
+}
+
+footer .foo-follow-visit_us .social-icon a:hover::before {
+  transform: skewX(45deg) translateX(-100px);
+}
+
+footer .foo-follow-visit_us .social-icon a::before {
   content: '';
   position: absolute;
   top: 0;
