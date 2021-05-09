@@ -159,9 +159,11 @@ footer {
     flex-direction: row;
     justify-content: space-evenly;
     gap: 20px;
-    img{
+
+    img {
         width: 150px;
     }
+
     .foo-about {
         display: flex;
         flex-direction: column;
@@ -240,7 +242,8 @@ footer {
             }
         }
     }
-    .copyright{
+
+    .copyright {
         position: absolute;
         bottom: 2px;
         width: 90%;
