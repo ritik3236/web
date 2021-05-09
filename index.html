@@ -145,11 +145,11 @@
     menuBtn.addEventListener("click", () => {
       if (!menuOpen) {
         menuBtn.classList.add("open");
-        navBtn.classList.add("nav-hide");
+        navBtn.classList.remove("nav-hide");
         menuOpen = true;
       } else {
         menuBtn.classList.remove("open");
-        navBtn.classList.remove("nav-hide");
+        navBtn.classList.add("nav-hide");
         menuOpen = false;
       }
     });
