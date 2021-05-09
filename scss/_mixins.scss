@@ -83,3 +83,11 @@
     }
     
 }
+
+@mixin flexColumn ($gap) {
+    display: flex;
+    gap: $gap;
+    flex-direction: column;
+    justify-content: center;
+    
+}

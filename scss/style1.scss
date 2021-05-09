@@ -151,13 +151,17 @@ header {
 footer {
     position: relative;
     padding: 20px;
+    padding-bottom: 25px;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     font-size: .9rem;
     font-weight: normal;
-    gap: 15px;
-
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 20px;
+    img{
+        width: 150px;
+    }
     .foo-about {
         display: flex;
         flex-direction: column;
@@ -196,7 +200,52 @@ footer {
     }
 
     .foo-follow-visit_us {
-        @include social-icon(30px, 30px)
+        @include flexColumn(9px);
+        @include social-icon(25px, 25px);
+
+        ul {
+            margin: 10px;
+        }
+    }
+
+    .foo-support-work {
+        @include flexColumn(11px);
+        @include social-icon(20px, 20px);
+
+        ul {
+            margin: 10px;
+        }
+
+        p {
+            margin: 8px;
+            font-size: 12px;
+            color: $social-icon-color;
+        }
+    }
+
+    .foo-links {
+        @include flexColumn(20px);
+
+        ul {
+            display: inherit;
+            gap: 10px;
+
+            li {
+                margin-bottom: 10px;
+
+                a {
+                    font-size: 12px;
+                    color: $social-icon-color;
+                }
+            }
+        }
+    }
+    .copyright{
+        position: absolute;
+        bottom: 2px;
+        width: 90%;
+        text-align: center;
+        font-size: 12px;
     }
 }
 

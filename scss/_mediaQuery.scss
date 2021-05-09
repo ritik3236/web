@@ -79,6 +79,12 @@
             z-index: 2;
         }
     }
+    footer{
+        flex-direction: column;
+        .copyright{
+            text-align: start;
+        }
+    }
 }
 
 @keyframes animate {

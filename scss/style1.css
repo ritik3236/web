@@ -243,11 +243,18 @@ header ul li a:hover, header ul li a.active {
 footer {
   position: relative;
   padding: 20px;
+  padding-bottom: 25px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   font-size: .9rem;
   font-weight: normal;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+footer img {
+  width: 150px;
 }
 
 footer .foo-about {
@@ -285,6 +292,13 @@ footer .foo-about ul li a {
   color: #34325e;
 }
 
+footer .foo-follow-visit_us {
+  display: flex;
+  gap: 9px;
+  flex-direction: column;
+  justify-content: center;
+}
+
 footer .foo-follow-visit_us .social-icon {
   display: flex;
   gap: 15px;
@@ -293,8 +307,8 @@ footer .foo-follow-visit_us .social-icon {
 footer .foo-follow-visit_us .social-icon a {
   font-size: 1.5rem;
   color: #4b4b5b;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: center;
@@ -329,6 +343,102 @@ footer .foo-follow-visit_us .social-icon a::before {
   background: rgba(255, 255, 255, 0.5);
   transform: skewX(45deg) translateX(100px);
   transition: .5s;
+}
+
+footer .foo-follow-visit_us ul {
+  margin: 10px;
+}
+
+footer .foo-support-work {
+  display: flex;
+  gap: 11px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer .foo-support-work .social-icon {
+  display: flex;
+  gap: 15px;
+}
+
+footer .foo-support-work .social-icon a {
+  font-size: 1.5rem;
+  color: #4b4b5b;
+  width: 20px;
+  height: 20px;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  transition: all .4s ease-in-out;
+  overflow: hidden;
+}
+
+footer .foo-support-work .social-icon a:hover {
+  color: #34325e;
+  transform: translateY(-20px);
+}
+
+footer .foo-support-work .social-icon a:hover::before {
+  transform: skewX(45deg) translateX(-100px);
+}
+
+footer .foo-support-work .social-icon a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: skewX(45deg) translateX(100px);
+  transition: .5s;
+}
+
+footer .foo-support-work ul {
+  margin: 10px;
+}
+
+footer .foo-support-work p {
+  margin: 8px;
+  font-size: 12px;
+  color: #4b4b5b;
+}
+
+footer .foo-links {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer .foo-links ul {
+  display: inherit;
+  gap: 10px;
+}
+
+footer .foo-links ul li {
+  margin-bottom: 10px;
+}
+
+footer .foo-links ul li a {
+  font-size: 12px;
+  color: #4b4b5b;
+}
+
+footer .copyright {
+  position: absolute;
+  bottom: 2px;
+  width: 90%;
+  text-align: center;
+  font-size: 12px;
 }
 
 /*===== HOME =====*/
@@ -392,6 +502,12 @@ footer .foo-follow-visit_us .social-icon a::before {
     bottom: 16px;
     left: 9%;
     z-index: 2;
+  }
+  footer {
+    flex-direction: column;
+  }
+  footer .copyright {
+    text-align: start;
   }
 }
 
