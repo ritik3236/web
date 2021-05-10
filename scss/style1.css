@@ -442,6 +442,133 @@ footer .copyright {
   font-size: 12px;
 }
 
+.container {
+  padding: 5rem 0;
+  background: #adabab31;
+}
+
+.container .heading {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.container .heading::after {
+  position: absolute;
+  content: '';
+  width: 100px;
+  height: .2rem;
+  background: #45da27c9;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 1rem;
+}
+
+.container .card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 18rem;
+  margin: 20px;
+  background: #ebeef8;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+.container .card-img {
+  width: 100%;
+  object-fit: cover;
+  height: 14rem;
+  clip-path: polygon(0 0, 100% 0%, 100% 77%, 0% 100%);
+}
+
+.container .profile-img {
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  border: 8px solid #ebeef8;
+  border-radius: 50%;
+  margin-top: -100px;
+  margin-bottom: 10px;
+  z-index: 1;
+}
+
+.container .name {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #34325e;
+}
+
+.container .person-title {
+  font-size: 1rem;
+  margin-bottom: 0px;
+  color: #4b4b5b;
+}
+
+.container .quotes {
+  text-align: center;
+  font-style: italic;
+  margin: 12px 0;
+  color: #333;
+}
+
+.container .btn {
+  padding: 10px 25px;
+  color: #eee;
+  background: #445ae3;
+  border-radius: 20px;
+  margin: 5px;
+  transition: all .5s;
+}
+
+.container .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.container .social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 15px 0;
+  margin-top: 12px;
+  border-top: 2px #4b4b5b solid;
+}
+
+.container .social-media a {
+  font-size: 20px;
+}
+
+.container .social-media a .fa-facebook-f {
+  color: #3b5399;
+}
+
+.container .social-media a .fa-twitter {
+  color: #55acee;
+}
+
+.container .social-media a .fa-instagram {
+  color: #a33aab;
+}
+
+.container .social-media a .fa-youtube {
+  color: #ed3833;
+}
+
 /*===== HOME =====*/
 /*===== Media Query & Keyframes =====*/
 /* ===== MEDIA QUERIES =====*/

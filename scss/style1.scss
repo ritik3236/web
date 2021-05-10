@@ -253,6 +253,125 @@ footer {
 }
 
 
+.container {
+    padding: 5rem 0;
+    background: #adabab31;
+
+    .heading {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 1.5rem;
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 100px;
+            height: .2rem;
+            background: #45da27c9;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 1rem;
+        }
+    }
+
+    .card-wrapper {
+        @include flexCenter(column);
+    }
+
+    .card {
+        @include flexCenter(column);
+        width: 18rem;
+        margin: 20px;
+        background: #ebeef8;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    }
+
+    .card-img {
+        width: 100%;
+        object-fit: cover;
+        height: 14rem;
+        clip-path: polygon(0 0, 100% 0%, 100% 77%, 0% 100%);
+    }
+
+    .profile-img {
+        width: 8rem;
+        height: 8rem;
+        object-fit: cover;
+        border: 8px solid #ebeef8;
+        border-radius: 50%;
+        margin-top: -100px;
+        margin-bottom: 10px;
+        z-index: 1;
+
+    }
+
+    .name {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: $social-icon-color-hover;
+    }
+
+    .person-title {
+        font-size: 1rem;
+        margin-bottom: 0px;
+        color: $social-icon-color;
+    }
+
+    .quotes {
+        text-align: center;
+        font-style: italic;
+        margin: 12px 0;
+        color: #333;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        color: #eee;
+        background: #445ae3;
+        border-radius: 20px;
+        margin: 5px;
+        transition: all .5s;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    .social-media {
+        @include flexCenter(row);
+        justify-content: space-evenly;
+        width: 100%;
+        padding: 15px 0;
+        margin-top: 12px;
+        border-top: 2px $social-icon-color solid;
+
+        a {
+            font-size: 20px;
+            .fa-facebook-f {
+                color: #3b5399
+            }
+
+            .fa-twitter {
+                color: #55acee;
+            }
+
+            .fa-instagram {
+                color: #a33aab;
+            }
+
+            .fa-youtube {
+                color: #ed3833;
+
+            }
+        }
+
+    }
+}
 
 /*===== HOME =====*/
 
