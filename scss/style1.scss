@@ -280,9 +280,11 @@ footer {
 
     .card-wrapper {
         @include flexCenter(column);
+        position: relative;
     }
 
     .card {
+
         @include flexCenter(column);
         width: 18rem;
         margin: 20px;
@@ -352,6 +354,7 @@ footer {
 
         a {
             font-size: 20px;
+
             .fa-facebook-f {
                 color: #3b5399
             }
@@ -370,6 +373,38 @@ footer {
             }
         }
 
+    }
+
+    .carousel {
+        overflow: hidden;
+       
+        .carousel-item,
+        .carousel-item--hidden {
+            display: none;
+        }
+
+        .carousel-item--visible {
+            display: flex;
+            animation: fadeOut .5s ease-in-out;
+
+        }
+
+        .carousel-action {
+            top: 50%;
+            width: 100%;
+            display: flex;
+            position: absolute;
+            transform: translateY(-50%);
+            justify-content: space-between;
+
+            button {
+                border-radius: 50%;
+                width: 25px;
+
+                height: 25px;
+                border: 2px blue solid;
+            }
+        }
     }
 }
 

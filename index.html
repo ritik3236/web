@@ -67,8 +67,8 @@
   <section>
     <div class="container">
       <h1 class="heading">Quotes of the Day</h1>
-      <div class="card-wrapper">
-        <div class="card">
+      <div class="card-wrapper carousel">
+        <div class="card carousel-item carousel-item--visible">
           <img src="/Imges/grey-back.jpeg" alt="" class="card-img">
           <img src="/Imges/Gandhi.jpeg" alt="" class="profile-img">
           <h1 class="name">Mahatma Gandhi</h1>
@@ -84,10 +84,10 @@
             <li><a href="#!"><i class="fab fa-youtube"></i></a></li>
           </ul>
         </div>
-        <div class="card">
+        <div class="card carousel-item">
           <img src="/Imges/grey-back.jpeg" alt="" class="card-img">
           <img src="/Imges/Gandhi.jpeg" alt="" class="profile-img">
-          <h1 class="name">Mahatma Gandhi</h1>
+          <h1 class="name">Mahatma Gandh</h1>
           <p class="person-title">Divider Specialist</p>
           <p class="quotes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad non dolorum magni dolores quam
             illo, aperiam aspernatur voluptatibus! Officia repellat aliquam vero pariatur dignissimos ipsam sed! Officia
@@ -100,10 +100,10 @@
             <li><a href="#!"><i class="fab fa-youtube"></i></a></li>
           </ul>
         </div>
-        <div class="card">
+        <div class="card carousel-item">
           <img src="/Imges/grey-back.jpeg" alt="" class="card-img">
           <img src="/Imges/Gandhi.jpeg" alt="" class="profile-img">
-          <h1 class="name">Mahatma Gandhi</h1>
+          <h1 class="name">Mahatma Gand</h1>
           <p class="person-title">Divider Specialist</p>
           <p class="quotes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad non dolorum magni dolores quam
             illo, aperiam aspernatur voluptatibus! Officia repellat aliquam vero pariatur dignissimos ipsam sed! Officia
@@ -116,10 +116,10 @@
             <li><a href="#!"><i class="fab fa-youtube"></i></a></li>
           </ul>
         </div>
-        <div class="card">
+        <div class="card carousel-item">
           <img src="/Imges/grey-back.jpeg" alt="" class="card-img">
           <img src="/Imges/Gandhi.jpeg" alt="" class="profile-img">
-          <h1 class="name">Mahatma Gandhi</h1>
+          <h1 class="name">Mahatma Gan</h1>
           <p class="person-title">Divider Specialist</p>
           <p class="quotes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad non dolorum magni dolores quam
             illo, aperiam aspernatur voluptatibus! Officia repellat aliquam vero pariatur dignissimos ipsam sed! Officia
@@ -131,6 +131,11 @@
             <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
             <li><a href="#!"><i class="fab fa-youtube"></i></a></li>
           </ul>
+        </div>
+        <div class="carousel-action">
+          <button id="carousel-button--prev">
+            < </buttton> <button id="carousel-button--next"> >
+          </button>
         </div>
       </div>
     </div>
@@ -221,6 +226,45 @@
         menuOpen = false;
       }
     });
+  </script>
+  <script>
+    let slidePosition = 0;
+    const slides = document.getElementsByClassName('carousel-item');
+    const totalSlides = slides.length;
+    document.getElementById('carousel-button--next')
+      .addEventListener("click", function () {
+        moveToNextSlide();
+      });
+    document.getElementById('carousel-button--prev')
+      .addEventListener("click", function () {
+        moveToPrevSlide();
+      });
+
+    function updateSlidePosition() {
+      for (let slide of slides) {
+        slide.classList.remove('carousel-item--visible');
+        slide.classList.add('carousel-item--hidden');
+      }
+      slides[slidePosition].classList.add('carousel-item--visible');
+    }
+
+    function moveToNextSlide() {
+      if (slidePosition === totalSlides-1) {
+        slidePosition = 0;
+      } else {
+        slidePosition++;
+      }
+      updateSlidePosition()
+    }
+
+    function moveToPrevSlide() {
+      if (slidePosition === 0) {
+        slidePosition = totalSlides-1;
+      } else {
+        slidePosition--;
+      }
+      updateSlidePosition()
+    }
   </script>
 </body>
 

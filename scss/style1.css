@@ -473,6 +473,7 @@ footer .copyright {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 
 .container .card {
@@ -569,6 +570,36 @@ footer .copyright {
   color: #ed3833;
 }
 
+.container .carousel {
+  overflow: hidden;
+}
+
+.container .carousel .carousel-item,
+.container .carousel .carousel-item--hidden {
+  display: none;
+}
+
+.container .carousel .carousel-item--visible {
+  display: flex;
+  animation: fadeOut .5s ease-in-out;
+}
+
+.container .carousel .carousel-action {
+  top: 50%;
+  width: 100%;
+  display: flex;
+  position: absolute;
+  transform: translateY(-50%);
+  justify-content: space-between;
+}
+
+.container .carousel .carousel-action button {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  border: 2px blue solid;
+}
+
 /*===== HOME =====*/
 /*===== Media Query & Keyframes =====*/
 /* ===== MEDIA QUERIES =====*/
@@ -646,6 +677,16 @@ footer .copyright {
   }
   50% {
     transform: translateY(30px);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: opcity linear;
   }
 }
 /*# sourceMappingURL=style1.css.map */
