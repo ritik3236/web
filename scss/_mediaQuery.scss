@@ -19,7 +19,7 @@
             flex-direction: column;
             position: absolute;
             right: 20px;
-            top: 20px;
+            top: 18px;
         }
 
         span {
@@ -64,6 +64,7 @@
 
     .content {
         flex-direction: column;
+        align-items: center;
         gap: 15px;
 
         .illustration {
@@ -75,12 +76,13 @@
         .social-button {
             position: absolute;
             bottom: 16px;
-            left: 9%;
+            transform: translateX(-50%);
+            left: 50%;
             z-index: 2;
         }
     }
 
-    .container {
+    .container-2 {
         .carousel {
             overflow: hidden;
 
@@ -114,7 +116,8 @@
                         border-bottom: 5px solid $social-icon-color;
                         border-right: 5px solid $social-icon-color;
                         border-radius: 3px;
-                        animation: animate 2s infinite;
+                        animation: animate 2s ease-in-out 5s 5;
+                        // animation-iteration-count: ;
                     }
 
                     &:nth-child(1) {
