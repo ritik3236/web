@@ -163,7 +163,7 @@ header {
             position: relative;
             width: 115px;
             height: 50px;
-            
+
             background: $social-icon-color;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
 
@@ -176,18 +176,17 @@ header {
                 @include flexCenter;
                 text-transform: uppercase;
                 letter-spacing: 2px;
-                color: $social-icon-color;
-                background: #098bd8;
+                color: #3d3632;
+                background: #47a1f7;
                 transition: .5s ease-in-out;
 
                 &:nth-child(2) {
-                    color: #098bd8;
-                    background: $social-icon-color;
+                    color: #47a1f7;
+                    background: #3d3632;
                     z-index: 2;
                     overflow: hidden;
                     transition: .5s ease-in-out;
                     clip-path: polygon(0% 0%, 50% 0, 80% 50%, 50% 100%, 0% 100%);
-
                     &:hover {
                         clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
                     }

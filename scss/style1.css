@@ -274,14 +274,14 @@ header ul li a:hover, header ul li a.active {
   flex-direction: row;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #4b4b5b;
-  background: #098bd8;
+  color: #3d3632;
+  background: #47a1f7;
   transition: .5s ease-in-out;
 }
 
 .primary-links ul li a span:nth-child(2) {
-  color: #098bd8;
-  background: #4b4b5b;
+  color: #47a1f7;
+  background: #3d3632;
   z-index: 2;
   overflow: hidden;
   transition: .5s ease-in-out;
