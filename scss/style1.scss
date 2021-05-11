@@ -152,20 +152,23 @@ header {
     @include social-icon(1.5rem, 50px, 50px);
 }
 
+
+
 .primary-links {
     ul {
         position: relative;
         @include flexCenter;
         gap: 20px;
+        flex-wrap: wrap;
 
-        li {
-            display: inline-block;
-            position: relative;
-            width: 115px;
-            height: 50px;
+        .btn-1,
+        .btn-2,
+        .btn-3,
+        .btn-4 {
+            @include links-btn;
+        }
 
-            background: $social-icon-color;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        .btn-1 {
 
             a span {
                 top: 0;
@@ -187,21 +190,131 @@ header {
                     overflow: hidden;
                     transition: .5s ease-in-out;
                     clip-path: polygon(0% 0%, 50% 0, 80% 50%, 50% 100%, 0% 100%);
+
                     &:hover {
                         clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
                     }
                 }
 
-                // clip-path: polygon(0% 0%, 60% 0, 83% 50%, 60% 100%, 0% 100%);
-                // clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
-                // clip-path: polygon(0% 0%, 0 0, 0 50%, 0 100%, 0% 100%);
+            }
+        }
+
+        .btn-2 {
+
+            overflow: hidden;
+
+            a {
+                position: relative;
+                display: flex;
+                line-height: 50px;
+                letter-spacing: 2px;
+                text-align: center;
+                flex-wrap: wrap;
+                transition: .5s ease-in-out;
+
+                span {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 2;
+                    color: #47a1f7;
+
+                    &:nth-child(2) {
+                        color: #3d3632;
+                    }
+
+                }
+
+                &::before {
+                    content: '';
+                    bottom: -100%;
+                    left: 50%;
+                    position: absolute;
+                    color: #3d3632;
+                    background: #47a1f7;
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    transform: translateX(-50%);
+                    transition: 0.5s ease-in-out;
+
+                }
+
+                &:hover {
+                    transform: translateY(-50%);
+                }
+
+                &:hover::before {
+
+                    bottom: -50%;
+                }
+            }
+
+        }
+
+        .btn-3 {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+
+            a {
+                color: whitesmoke;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                align-items: center;
+                transition: .5s ease-in-out;
+                span {
+                    z-index: 2;
+                    &:nth-child(2) {
+                        position: absolute;
+                        display: flex;
+                        top: 150%;
+                        &:hover{
+                            top: auto;
+                        }
+                    }
+
+
+                }
+
+                &::before {
+                    content: '';
+                    top: 100%;
+                    left: 50%;
+                    position: absolute;
+                    color: #3d3632;
+                    background: #47a1f7;
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    transform: translateX(-50%);
+                    transition: 0.5s ease-in-out;
+                    
+                }
+                &:hover {
+                    transform: translateY(-120%);
+                }
+
+                &:hover::before{
+                    top: 0%;
+                }
+                // span nth2 top: auto;
+                // before::    top: -100%;
+                // 
             }
         }
     }
 
+
+
 }
 
-.primary-links a span:nth-child(1):hover~span:nth-child(2) {
+.primary-links .btn-1 a span:nth-child(1):hover~span:nth-child(2) {
     clip-path: polygon(0% 0%, 0 0, 0 50%, 0 100%, 0% 100%);
     // clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 100% 50%);
 }
