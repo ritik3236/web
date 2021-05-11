@@ -287,7 +287,7 @@ header ul li a:hover, header ul li a.active {
   background: #3d3632;
   z-index: 2;
   overflow: hidden;
-  transition: .5s ease-in-out;
+  transition: .4s ease-in-out;
   clip-path: polygon(0% 0%, 50% 0, 80% 50%, 50% 100%, 0% 100%);
 }
 
@@ -296,106 +296,47 @@ header ul li a:hover, header ul li a.active {
 }
 
 .primary-links ul .btn-2 {
+  display: flex;
   overflow: hidden;
+  align-items: center;
+  justify-content: center;
 }
 
 .primary-links ul .btn-2 a {
-  position: relative;
-  display: flex;
-  line-height: 50px;
-  letter-spacing: 2px;
-  text-align: center;
-  flex-wrap: wrap;
-  transition: .5s ease-in-out;
-}
-
-.primary-links ul .btn-2 a span {
-  position: relative;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  display: flex;
   color: #47a1f7;
-}
-
-.primary-links ul .btn-2 a span:nth-child(2) {
-  color: #3d3632;
+  position: relative;
+  letter-spacing: 2px;
+  align-items: center;
+  justify-content: center;
+  transition: .4s ease-in-out;
 }
 
 .primary-links ul .btn-2 a::before {
-  content: '';
-  bottom: -100%;
-  left: 50%;
-  position: absolute;
-  color: #3d3632;
-  background: #47a1f7;
-  width: 150px;
+  opacity: 1;
+  z-index: 2;
+  width: 170px;
   height: 150px;
+  display: flex;
+  color: #3d3632;
+  top: 50px;
+  content: 'Q.Paper';
+  position: absolute;
   border-radius: 50%;
-  transform: translateX(-50%);
-  transition: 0.5s ease-in-out;
+  align-items: center;
+  background: #47a1f7;
+  justify-content: center;
+  transition: 0.4s ease-in-out;
 }
 
 .primary-links ul .btn-2 a:hover {
-  transform: translateY(-50%);
+  transform: translateY(-50px);
 }
 
 .primary-links ul .btn-2 a:hover::before {
-  bottom: -50%;
-}
-
-.primary-links ul .btn-3 {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.primary-links ul .btn-3 a {
-  color: whitesmoke;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  transition: .5s ease-in-out;
-}
-
-.primary-links ul .btn-3 a span {
-  z-index: 2;
-}
-
-.primary-links ul .btn-3 a span:nth-child(2) {
-  position: absolute;
-  display: flex;
-  top: 150%;
-}
-
-.primary-links ul .btn-3 a span:nth-child(2):hover {
-  top: auto;
-}
-
-.primary-links ul .btn-3 a::before {
-  content: '';
-  top: 100%;
-  left: 50%;
-  position: absolute;
-  color: #3d3632;
-  background: #47a1f7;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  transform: translateX(-50%);
-  transition: 0.5s ease-in-out;
-}
-
-.primary-links ul .btn-3 a:hover {
-  transform: translateY(-120%);
-}
-
-.primary-links ul .btn-3 a:hover::before {
-  top: 0%;
+  transform: translateY(-50px);
 }
 
 .primary-links .btn-1 a span:nth-child(1):hover ~ span:nth-child(2) {
