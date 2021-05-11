@@ -50,13 +50,13 @@
     }
 }
 
-@mixin social-icon($width, $height) {
+@mixin social-icon($size:1.5rem, $width:auto, $height:auto) {
     .social-icon {
         display: flex;
         gap: 15px;
 
         a {
-            font-size: 1.5rem;
+            font-size: $size;
             color: $social-icon-color;
             width: $width;
             height: $height;

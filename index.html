@@ -78,7 +78,7 @@
             reiciendis sint cumque.</p>
           <a href="" class="btn">Contact</a>
           <ul class="social-media">
-            <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#!"><i class="fab fa-facebook-square "></i></a></li>
             <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
             <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
             <li><a href="#!"><i class="fab fa-youtube"></i></a></li>
@@ -94,7 +94,7 @@
             reiciendis sint cumque.</p>
           <a href="" class="btn">Contact</a>
           <ul class="social-media">
-            <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#!"><i class="fab fa-facebook-square"></i></a></li>
             <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
             <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
             <li><a href="#!"><i class="fab fa-youtube"></i></a></li>
@@ -110,32 +110,16 @@
             reiciendis sint cumque.</p>
           <a href="" class="btn">Contact</a>
           <ul class="social-media">
-            <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#!"><i class="fab fa-facebook-square"></i></a></li>
             <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
             <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
             <li><a href="#!"><i class="fab fa-youtube"></i></a></li>
           </ul>
         </div>
-        <div class="card carousel-item">
-          <img src="/Imges/grey-back.jpeg" alt="" class="card-img">
-          <img src="/Imges/Gandhi.jpeg" alt="" class="profile-img">
-          <h1 class="name">Mahatma Gan</h1>
-          <p class="person-title">Divider Specialist</p>
-          <p class="quotes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad non dolorum magni dolores quam
-            illo, aperiam aspernatur voluptatibus! Officia repellat aliquam vero pariatur dignissimos ipsam sed! Officia
-            reiciendis sint cumque.</p>
-          <a href="" class="btn">Contact</a>
-          <ul class="social-media">
-            <li><a href="#!"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#!"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#!"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="#!"><i class="fab fa-youtube"></i></a></li>
-          </ul>
-        </div>
+       
         <div class="carousel-action">
-          <button id="carousel-button--prev">
-            < </buttton> <button id="carousel-button--next"> >
-          </button>
+          <button id="carousel-button--prev"><span></span></buttton>
+            <button id="carousel-button--next"><span></span></button>
         </div>
       </div>
     </div>
@@ -182,6 +166,7 @@
       <div>
         <h4>SUPPORT US:</h4>
         <ul class="social-icon">
+          <li><a href=""><i class="fab fa-google-pay"></i></a></li>
           <li><a href=""><i class="fab fa-bitcoin"></i></a></li>
           <li><a href=""><i class="fab fa-ethereum"></i></a></li>
         </ul>
@@ -249,7 +234,7 @@
     }
 
     function moveToNextSlide() {
-      if (slidePosition === totalSlides-1) {
+      if (slidePosition === totalSlides - 1) {
         slidePosition = 0;
       } else {
         slidePosition++;
@@ -259,7 +244,7 @@
 
     function moveToPrevSlide() {
       if (slidePosition === 0) {
-        slidePosition = totalSlides-1;
+        slidePosition = totalSlides - 1;
       } else {
         slidePosition--;
       }
