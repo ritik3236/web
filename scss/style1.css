@@ -33,10 +33,6 @@ body section:nth-child(1) {
   background: url(/back.jpg) center center fixed;
 }
 
-body section:nth-child(2) {
-  background: url(/back.jpg) center center fixed;
-}
-
 /* ===== Squares ===== */
 .square {
   position: fixed;
@@ -475,7 +471,7 @@ header ul li a:hover, header ul li a.active {
 }
 
 .container-1 {
-  min-height: 100vh;
+  background: magenta;
 }
 
 .container-2 {

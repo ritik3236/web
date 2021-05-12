@@ -15,9 +15,9 @@ body {
       background: $backpic center center fixed;
     }
 
-    &:nth-child(2) {
-      background: $backpic center center fixed;
-    }
+    // &:nth-child(2) {
+    //   background: $backpic center center fixed;
+    // }
   }
 }
 
@@ -340,7 +340,8 @@ header {
 }
 
 .container-1 {
-  min-height: 100vh;
+//   min-height: 100vh;
+background: magenta;
 }
 
 .container-2 {
