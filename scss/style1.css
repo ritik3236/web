@@ -123,7 +123,7 @@ header .logo {
 
 header ul {
   display: flex;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 header ul li {
@@ -134,7 +134,7 @@ header ul li a {
   color: #9b1abb;
   padding: 8px 15px;
   cursor: pointer;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   border-radius: 25px;
 }
 
@@ -279,7 +279,7 @@ header ul li a:hover, header ul li a.active {
   letter-spacing: 2px;
   color: #3d3632;
   background: #47a1f7;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .primary-links ul .btn-1 a span:nth-child(2) {
@@ -287,7 +287,7 @@ header ul li a:hover, header ul li a.active {
   background: #3d3632;
   z-index: 2;
   overflow: hidden;
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
   clip-path: polygon(0% 0%, 50% 0, 80% 50%, 50% 100%, 0% 100%);
 }
 
@@ -311,7 +311,7 @@ header ul li a:hover, header ul li a.active {
   letter-spacing: 2px;
   align-items: center;
   justify-content: center;
-  transition: .4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 .primary-links ul .btn-2 a::before {
@@ -322,7 +322,7 @@ header ul li a:hover, header ul li a.active {
   display: flex;
   color: #3d3632;
   top: 50px;
-  content: 'Q.Paper';
+  content: "Q.Paper";
   position: absolute;
   border-radius: 50%;
   align-items: center;
@@ -363,9 +363,9 @@ header ul li a:hover, header ul li a.active {
 
 .container-2 .heading::after {
   position: absolute;
-  content: '';
+  content: "";
   width: 100px;
-  height: .2rem;
+  height: 0.2rem;
   background: #45da27c9;
   bottom: 0px;
   left: 50%;
@@ -436,7 +436,7 @@ header ul li a:hover, header ul li a.active {
   background: #445ae3;
   border-radius: 20px;
   margin: 5px;
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .container-2 .btn:hover {
@@ -482,7 +482,7 @@ footer {
   padding-bottom: 25px;
   display: flex;
   flex-wrap: wrap;
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: normal;
   flex-direction: row;
   justify-content: space-evenly;
@@ -680,7 +680,7 @@ footer .copyright {
 /*===== HOME =====*/
 /*===== Media Query & Keyframes =====*/
 /* ===== MEDIA QUERIES =====*/
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 720px) {
   body section:nth-child(1) {
     overflow: hidden;
     display: block;
@@ -703,7 +703,7 @@ footer .copyright {
     height: 3px;
     background: #c983c7bf;
     margin: 1px 1px;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
   header .navigation.nav-hide {
     display: none;
@@ -729,6 +729,7 @@ footer .copyright {
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    position: relative;
   }
   .content .illustration {
     width: 50vw;
@@ -736,10 +737,20 @@ footer .copyright {
   }
   .content .social-button {
     position: absolute;
-    bottom: 16px;
-    transform: translateX(-50%);
-    left: 50%;
+    top: 50%;
+    right: -10px;
     z-index: 2;
+  }
+  .content .social-button ul {
+    flex-direction: column;
+  }
+  .content .social-button ul a {
+    font-size: 1rem;
+    width: 30px;
+    height: 30px;
+  }
+  .content .social-button ul a:hover {
+    transform: translateX(-20px);
   }
   .container-2 .carousel {
     overflow: hidden;
@@ -750,7 +761,7 @@ footer .copyright {
   }
   .container-2 .carousel .carousel-item--visible {
     display: flex;
-    animation: fadeOut .5s ease-in-out;
+    animation: fadeOut 0.5s ease-in-out;
   }
   .container-2 .carousel .carousel-action {
     top: 50%;
