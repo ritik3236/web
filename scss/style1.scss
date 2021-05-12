@@ -120,8 +120,8 @@ header {
 /*=== Content ===*/
 
 .content {
-  @include flexCenter(inherit);
-
+  @include flexCenter;
+    margin: 5rem 0;
   .about {
     display: flex;
     flex-direction: column;
@@ -160,7 +160,12 @@ header {
     .btn-2,
     .btn-3,
     .btn-4 {
-      @include links-btn;
+        border-radius: 3px;
+      position: relative;
+      width: 115px;
+      height: 50px;
+      background: $dark-color;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
     }
 
     .btn-1 {
@@ -173,13 +178,13 @@ header {
         @include flexCenter;
         text-transform: uppercase;
         letter-spacing: 2px;
-        color: #3d3632;
-        background: #47a1f7;
+        color: $dark-color;
+        background: $blue-color;
         transition: 0.5s ease-in-out;
 
         &:nth-child(2) {
-          color: #47a1f7;
-          background: #3d3632;
+          color: $blue-color;
+          background: $dark-color;
           z-index: 2;
           overflow: hidden;
           transition: 0.4s ease-in-out;
@@ -202,7 +207,8 @@ header {
         width: 100%;
         height: 100%;
         display: flex;
-        color: #47a1f7;
+        color: $dark-color;
+        background: $blue-color;
         position: relative;
         letter-spacing: 2px;
         align-items: center;
@@ -210,19 +216,20 @@ header {
         transition: 0.4s ease-in-out;
 
         &::before {
-          $btn-before-width: 150px;
+         
           opacity: 1;
           z-index: 2;
           width: 170px;
-          height: $btn-before-width;
+          height: 150px;
           display: flex;
-          color: #3d3632;
-          top: ($btn-height + (150px-$btn-before-width)/2);
+          color: $blue-color;
+          top: 50px;
+          letter-spacing: 2px;
           content: "Q.Paper";
           position: absolute;
           border-radius: 50%;
           align-items: center;
-          background: #47a1f7;
+          background: $dark-color;
           justify-content: center;
           transition: 0.4s ease-in-out;
         }
@@ -232,9 +239,52 @@ header {
         }
 
         &:hover::before {
-          transform: translateY(-50px + (50px - $btn-height)/2);
+          transform: translateY(-50px - (50px - 50px)/2);
         }
       }
+    }
+    .btn-3{
+        a{
+            position: relative;
+            @include flexCenter;
+            width: 100%;
+            height: 100%;
+            color: $blue-color;
+            letter-spacing: 2px;
+            transition: .5s ;
+
+            &::before{
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                width: 20px;
+                height: 20px;
+                transition: .5s ;
+                border-top: 2px solid $blue-color;
+                border-left: 2px solid $blue-color;
+            }
+            &::after{
+                position: absolute;
+                content: '';
+                bottom: 0;
+                right: 0;
+                width: 20px;
+                height: 20px;
+                transition: .5s ;
+                border-bottom: 2px solid $blue-color;
+                border-right: 2px solid $blue-color;
+            }
+            &:hover::before , &:hover::after{
+                width: 100%;
+                height: 100%;
+            }
+            &:hover{
+                color: $dark-color;
+                background: $blue-color;
+                transition-delay: .4s; 
+            }
+        }
     }
   }
 }

@@ -1,4 +1,4 @@
-$btn-height :50px;
+
 @mixin flexCenter($direction:row) {
     display: flex;
     justify-content: center;
@@ -90,12 +90,4 @@ $btn-height :50px;
         }
     }
 
-}
-@mixin links-btn {
-    // display: inline-block;
-    position: relative;
-    width: 115px;
-    height: $btn-height;
-    background: #3d3632;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
 }

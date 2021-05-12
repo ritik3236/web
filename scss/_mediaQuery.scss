@@ -66,7 +66,7 @@
     align-items: center;
     gap: 15px;
     position: relative;
-
+    margin: 0 0 2rem 0;
     .illustration {
       width: 50vw;
       transform: translate(0);
@@ -90,7 +90,24 @@
       }
     }
   }
-
+  .primary-links {
+    ul {
+      .btn-1,
+      .btn-2,
+      .btn-3,
+      .btn-4 {
+        width: 95px;
+        height: 40px;
+      }
+    }
+    .btn-2 {
+      a {
+        &:hover::before {
+          transform: translateY(-50px - (50px - 40px)/2) !important;
+        }
+      }
+    }
+  }
   .container-2 {
     .carousel {
       overflow: hidden;
