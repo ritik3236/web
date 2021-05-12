@@ -174,7 +174,7 @@ header ul li a:hover, header ul li a.active {
 .content .divider {
   background-image: linear-gradient(to right, #4a4a59, #db56f8);
   border-radius: 1rem;
-  padding: .1rem 0;
+  padding: 0.1rem 0;
   position: relative;
   z-index: 1;
   margin: 19px 17vw 19px 0;
@@ -183,7 +183,7 @@ header ul li a:hover, header ul li a.active {
 .content .divider:before {
   border-radius: inherit;
   background-image: linear-gradient(to right, #db56f8, #4a4a59);
-  content: '';
+  content: "";
   display: block;
   height: 100%;
   position: absolute;
@@ -220,7 +220,7 @@ header ul li a:hover, header ul li a.active {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 4px;
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   overflow: hidden;
 }
 
@@ -234,7 +234,7 @@ header ul li a:hover, header ul li a.active {
 }
 
 .content .social-icon a::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -242,7 +242,7 @@ header ul li a:hover, header ul li a.active {
   height: 100%;
   background: rgba(255, 255, 255, 0.5);
   transform: skewX(45deg) translateX(100px);
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .primary-links ul {
@@ -300,21 +300,23 @@ header ul li a:hover, header ul li a.active {
 
 .primary-links ul .btn-2 {
   display: flex;
-  overflow: hidden;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  overflow: hidden;
 }
 
 .primary-links ul .btn-2 a {
   width: 100%;
   height: 100%;
-  display: flex;
   color: #47a1f7;
   background: #3d3632;
   position: relative;
-  letter-spacing: 2px;
-  align-items: center;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  letter-spacing: 2px;
   transition: 0.4s ease-in-out;
 }
 
@@ -323,16 +325,17 @@ header ul li a:hover, header ul li a.active {
   z-index: 2;
   width: 170px;
   height: 150px;
-  display: flex;
   color: #3d3632;
   top: 50px;
   letter-spacing: 2px;
   content: "Q.Paper";
   position: absolute;
   border-radius: 50%;
-  align-items: center;
   background: #47a1f7;
+  display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: row;
   transition: 0.4s ease-in-out;
 }
 
@@ -345,16 +348,17 @@ header ul li a:hover, header ul li a.active {
 }
 
 .primary-links ul .btn-3 a {
+  width: 100%;
+  height: 100%;
+  color: #47a1f7;
+  background: #3d3632;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  width: 100%;
-  height: 100%;
-  color: #47a1f7;
   letter-spacing: 2px;
-  transition: 0.5s;
+  transition: 0.4s ease-in-out;
 }
 
 .primary-links ul .btn-3 a::before {
@@ -390,6 +394,80 @@ header ul li a:hover, header ul li a.active {
   color: #3d3632;
   background: #47a1f7;
   transition-delay: 0.4s;
+}
+
+.primary-links ul .btn-4 a {
+  width: 100%;
+  height: 100%;
+  color: #47a1f7;
+  background: #3d3632;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  letter-spacing: 2px;
+  transition: 0.4s ease-in-out;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.primary-links ul .btn-4 a:hover > span:nth-child(1) {
+  animation: btn-span-1 1.5s linear infinite;
+  background: linear-gradient(to right, #3d3632, #78baf9);
+}
+
+.primary-links ul .btn-4 a:hover > span:nth-child(2) {
+  opacity: 1;
+  transition: opacity 4.5s ease;
+  animation: btn-span-2 1.5s .75s linear infinite;
+  background: linear-gradient(to bottom, #3d3632, #78baf9);
+}
+
+.primary-links ul .btn-4 a:hover > span:nth-child(3) {
+  animation: btn-span-3 1.5s linear infinite;
+  background: linear-gradient(to left, #3d3632, #78baf9);
+}
+
+.primary-links ul .btn-4 a:hover > span:nth-child(4) {
+  opacity: 1;
+  transition: opacity 7.5s ease;
+  animation: btn-span-4 1.5s .75s linear infinite;
+  background: linear-gradient(to top, #3d3632, #78baf9);
+}
+
+.primary-links ul .btn-4 a span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+.primary-links ul .btn-4 a span:nth-child(2) {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+}
+
+.primary-links ul .btn-4 a span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+}
+
+.primary-links ul .btn-4 a span:nth-child(4) {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100%;
 }
 
 .primary-links .btn-1 a span:nth-child(1):hover ~ span:nth-child(2) {
@@ -609,7 +687,7 @@ footer .foo-follow-visit_us .social-icon a {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 4px;
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   overflow: hidden;
 }
 
@@ -623,7 +701,7 @@ footer .foo-follow-visit_us .social-icon a:hover::before {
 }
 
 footer .foo-follow-visit_us .social-icon a::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -631,7 +709,7 @@ footer .foo-follow-visit_us .social-icon a::before {
   height: 100%;
   background: rgba(255, 255, 255, 0.5);
   transform: skewX(45deg) translateX(100px);
-  transition: .5s;
+  transition: 0.5s;
 }
 
 footer .foo-follow-visit_us ul {
@@ -666,7 +744,7 @@ footer .foo-support-work .social-icon a {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 4px;
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   overflow: hidden;
 }
 
@@ -680,7 +758,7 @@ footer .foo-support-work .social-icon a:hover::before {
 }
 
 footer .foo-support-work .social-icon a::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -688,7 +766,7 @@ footer .foo-support-work .social-icon a::before {
   height: 100%;
   background: rgba(255, 255, 255, 0.5);
   transform: skewX(45deg) translateX(100px);
-  transition: .5s;
+  transition: 0.5s;
 }
 
 footer .foo-support-work ul {
@@ -893,6 +971,42 @@ footer .copyright {
   100% {
     opacity: 0;
     transform: translate(5px, 5px);
+  }
+}
+
+@keyframes btn-span-1 {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes btn-span-2 {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes btn-span-3 {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes btn-span-4 {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(-100%);
   }
 }
 /*# sourceMappingURL=style1.css.map */

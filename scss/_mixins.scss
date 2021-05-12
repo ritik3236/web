@@ -1,93 +1,101 @@
-
-@mixin flexCenter($direction:row) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: $direction;
+@mixin flexCenter($direction: row) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
 }
-@mixin flexColumn ($gap:none) {
-    display: flex;
-    gap: $gap;
-    flex-direction: column;
-    justify-content: center;
-
+@mixin flexColumn($gap: none) {
+  display: flex;
+  gap: $gap;
+  flex-direction: column;
+  justify-content: center;
 }
 
 @mixin backBorder($radius) {
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: $radius;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: $radius;
 }
 
 @mixin divider($f-color, $l-color) {
-    background-image: linear-gradient(to right, $f-color, $l-color);
-    border-radius: 1rem;
-    padding: .1rem 0;
-    position: relative;
-    z-index: 1;
+  background-image: linear-gradient(to right, $f-color, $l-color);
+  border-radius: 1rem;
+  padding: 0.1rem 0;
+  position: relative;
+  z-index: 1;
 
+  &:before {
+    border-radius: inherit;
+    background-image: linear-gradient(to right, $l-color, $f-color);
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    z-index: -100;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  &:hover {
     &:before {
-        border-radius: inherit;
-        background-image: linear-gradient(to right, $l-color, $f-color);
-        content: '';
-        display: block;
-        height: 100%;
+      opacity: 1;
+    }
+  }
+}
+
+@mixin social-icon($size: 1.5rem, $width: auto, $height: auto) {
+  .social-icon {
+    display: flex;
+    gap: 15px;
+
+    a {
+      font-size: $size;
+      color: $social-icon-color;
+      width: $width;
+      height: $height;
+      backdrop-filter: blur(5px);
+      @include flexCenter(row);
+      @include backBorder(4px);
+      transition: all 0.4s ease-in-out;
+      overflow: hidden;
+
+      &:hover {
+        color: $social-icon-color-hover;
+        transform: translateY(-20px);
+
+        &::before {
+          transform: skewX(45deg) translateX(-100px);
+        }
+      }
+
+      &::before {
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
-        opacity: 0;
-        width: 100%;
-        z-index: -100;
-        transition: opacity 0.5s ease-in-out;
+        width: 60%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.5);
+        transform: skewX(45deg) translateX(100px);
+        transition: 0.5s;
+      }
     }
-
-    &:hover {
-        &:before {
-            opacity: 1;
-        }
-    }
+  }
 }
 
-@mixin social-icon($size:1.5rem, $width:auto, $height:auto) {
-    .social-icon {
-        display: flex;
-        gap: 15px;
-
-        a {
-            font-size: $size;
-            color: $social-icon-color;
-            width: $width;
-            height: $height;
-            backdrop-filter: blur(5px);
-            @include flexCenter(row);
-            @include backBorder(4px);
-            transition: all .4s ease-in-out;
-            overflow: hidden;
-
-            &:hover {
-                color: $social-icon-color-hover;
-                transform: translateY(-20px);
-
-                &::before {
-                    transform: skewX(45deg) translateX(-100px);
-                }
-            }
-
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 60%;
-                height: 100%;
-                background: rgba(255, 255, 255, 0.5);
-                transform: skewX(45deg) translateX(100px);
-                transition: .5s;
-            }
-        }
-    }
-
+@mixin btn-a {
+  width: 100%;
+  height: 100%;
+  color: $blue-color;
+  background: $dark-color;
+  position: relative;
+  @include flexCenter;
+  letter-spacing: 2px;
+  transition: 0.4s ease-in-out;
 }
