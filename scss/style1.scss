@@ -272,27 +272,26 @@ header {
       a {
         @include btn-a;
         overflow: hidden;
-        transition: .5s;
-        &:hover > span:nth-child(1){
-            
+        transition: 0.5s;
+        &:hover > span:nth-child(1) {
           animation: btn-span-1 1.5s linear infinite;
-          background: linear-gradient(to right, $dark-color, lighten($blue-color, 10%));
+          background: linear-gradient(to right, $dark-color, $blue-color);
         }
-        &:hover > span:nth-child(2){
-            opacity: 1;
-            transition: opacity 4.5s ease;
-            animation: btn-span-2 1.5s .75s linear infinite;
-            background: linear-gradient(to bottom, $dark-color, lighten($blue-color, 10%));
+        &:hover > span:nth-child(2) {
+          opacity: 1;
+          transition: opacity 4.5s ease;
+          animation: btn-span-2 1.5s 0.75s linear infinite;
+          background: linear-gradient(to bottom, $dark-color, $blue-color);
         }
-        &:hover > span:nth-child(3){
-            animation: btn-span-3 1.5s linear infinite;
-            background: linear-gradient(to left, $dark-color, lighten($blue-color, 10%));
+        &:hover > span:nth-child(3) {
+          animation: btn-span-3 1.5s linear infinite;
+          background: linear-gradient(to left, $dark-color, $blue-color);
         }
-        &:hover > span:nth-child(4){
-            opacity: 1;
-            transition: opacity 7.5s ease;
-            animation: btn-span-4 1.5s .75s linear infinite;
-            background: linear-gradient(to top, $dark-color, lighten($blue-color, 10%));
+        &:hover > span:nth-child(4) {
+          opacity: 1;
+          transition: opacity 7.5s ease;
+          animation: btn-span-4 1.5s 0.75s linear infinite;
+          background: linear-gradient(to top, $dark-color, $blue-color);
         }
         span {
           &:nth-child(1) {
@@ -303,13 +302,12 @@ header {
             height: 2px;
           }
           &:nth-child(2) {
-              opacity: 0;
+            opacity: 0;
             position: absolute;
             top: 0;
             right: 0;
             width: 2px;
             height: 100%;
-            
           }
           &:nth-child(3) {
             position: absolute;
@@ -317,16 +315,14 @@ header {
             left: 0;
             width: 100%;
             height: 2px;
-            
           }
           &:nth-child(4) {
-              opacity: 0;
+            opacity: 0;
             position: absolute;
             top: 0;
             left: 0;
             width: 2px;
             height: 100%;
-            
           }
         }
       }
@@ -340,8 +336,51 @@ header {
 }
 
 .container-1 {
-//   min-height: 100vh;
-background: magenta;
+  padding: 4vw;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  justify-content: space-around;
+  // > div {
+  //   &:not(:last-child) {
+  //     margin-right: 20px;
+  //   }
+  // }
+  .courses,
+  .Combinations,
+  .Years {
+    width: 18rem;
+    display: initial;
+  }
+  h2 {
+    margin-bottom: 10px;
+    color: $dark-color;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    li {
+      width: 80px;
+      height: 50px;
+
+      a {
+        @include flexCenter;
+        width: 100%;
+        height: 100%;
+        background: $dark-color;
+        color: $blue-color;
+        border-radius: 5px;
+        transition: .5s;
+        &:hover, &.active {
+          color: $dark-color;
+          background: $blue-color;
+        }
+      }
+    }
+  }
 }
 
 .container-2 {
