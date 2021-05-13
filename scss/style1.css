@@ -533,7 +533,7 @@ header ul li a:hover, header ul li a.active {
 }
 
 .container-1 .sub-container-2 div {
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   border-radius: 5px;
   background: #3d3632;
 }
