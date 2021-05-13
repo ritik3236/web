@@ -348,8 +348,8 @@ header {
   //   }
   // }
   .courses,
-  .Combinations,
-  .Years {
+  .combinations,
+  .subjects {
     width: 18rem;
     display: initial;
   }
@@ -370,6 +370,9 @@ header {
         @include flexCenter;
         width: 100%;
         height: 100%;
+        text-align: center;
+        line-height: 13px;
+        word-break: break-all;
         background: $dark-color;
         color: $blue-color;
         border-radius: 5px;
