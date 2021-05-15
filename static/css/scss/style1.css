@@ -29,7 +29,7 @@ body {
 body section:nth-child(1) {
   position: relative;
   padding: 7rem 4vw 4vw 4vw;
-  background: url(/back.jpg) center center fixed;
+  background: url("/static/images/back-images/back.jpg") center center fixed;
 }
 
 /* ===== Squares ===== */
