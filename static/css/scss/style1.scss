@@ -12,6 +12,7 @@ body {
       position: relative;
       padding: 7rem 4vw 4vw 4vw;
       // min-height: 100vh;
+
       background: $backpic center center fixed;
     }
 
@@ -424,7 +425,7 @@ header {
       width: 100px;
       height: 0.2rem;
       background: #45da27c9;
-      bottom: 0px;
+      bottom: 0;
       left: 50%;
       transform: translateX(-50%);
       border-radius: 1rem;
@@ -471,7 +472,7 @@ header {
 
   .person-title {
     font-size: 1rem;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     color: $social-icon-color;
   }
 
@@ -528,8 +529,7 @@ header {
 
 footer {
   position: relative;
-  padding: 20px;
-  padding-bottom: 25px;
+  padding: 20px 20px 25px 20px ;
   display: flex;
   flex-wrap: wrap;
   font-size: 0.9rem;
@@ -563,11 +563,11 @@ footer {
       li {
         &:not(:last-child) {
           border-right: 2px solid darkblue;
-          margin: 3px 0px;
+          margin: 3px 0;
         }
 
         &:last-child {
-          margin: 3px 0px;
+          margin: 3px 0;
         }
 
         a {
