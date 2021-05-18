@@ -52,7 +52,7 @@ class QuestionView(TemplateView):
                 qes_list = [' Unfortunately We Got No Qestion Paper 😔 ']
             print(qes_list)
         else:
-            sub_list = txt_to_list('Sorry We Got NO Mail')
+            sub_list = txt_to_list('Sorry We Got No Subjects 😔')
         context = {
             'context': fun_course(),
             'id': kwargs['c_id'],
