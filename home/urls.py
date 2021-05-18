@@ -1,10 +1,14 @@
+from collections import defaultdict
 from django.urls import path
+from home import views
+from home.views import *
 
-from . import views
-
+app_name = 'home'
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('bsc/', views.home, name='bsc'),
-    path('bsc/<int:num>/', views.home, name='bsc'),
+    path('', HomeView.as_view(), name='home'),
+    path('Q_paper/', QuestionView.as_view(), name='ques'),
+    path('Q_paper/<int:c_id>/', QuestionView.as_view(), name='ques'),
+    path('Q_paper/<int:c_id>/<int:sem_id>/', QuestionView.as_view(), name='sem'),
+    path('Q_paper/<int:c_id>/<int:sem_id>/<str:sub_name>', QuestionView.as_view(), name='subject'),
 
 ]

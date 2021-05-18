@@ -15,6 +15,8 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+        # Run Virtual Envoirnment if getting error invalid syntax from exc
+        # run to activate Virtual Envoirnment : source <venv>/bin/acivate
     execute_from_command_line(sys.argv)
 
 
