@@ -55,8 +55,9 @@
                 <div class="courses">
                     <h2>Courses :</h2>
                     <ul>
-                        {% for id, course in context %}    
-                            <li><a class="" href="{% url 'home:ques' %}{{ id }}">{{ course }}</a></li>
+                        {% for c_id, course in course_list %}  
+                            <li><a class="{% if c_id|safe == id|default:1|safe %} active {% endif %}" 
+                             href="{% url 'home:ques' %}{{ c_id }}">{{ course }}</a></li>
                         {% endfor %} 
                     </ul>
                 </div>
@@ -64,18 +65,16 @@
                 <div class="subjects">
                     <h2>Sem :</h2>
                     <ul>
-                        <li><a class="active" href="{% url 'home:ques' %}{{ id|default:1 }}/1">1st</a></li>
-                        <li><a href="{% url 'home:ques' %}{{ id|default:1 }}/2">2nd</a></li>
-                        <li><a href="{% url 'home:ques' %}{{ id|default:1 }}/3">3rd</a></li>
-                        <li><a href="{% url 'home:ques' %}{{ id|default:1 }}/4">4th</a></li>
-                        <li><a href="{% url 'home:ques' %}{{ id|default:1 }}/5">5th</a></li>
-                        <li><a href="{% url 'home:ques' %}{{ id|default:1 }}/6">6th</a></li>
+                    {% for sem_id_1, sem_name in sem_list.items %}
+                    <li><a class="{% if sem_id_1|safe == sem_id|default:1|safe %} active {% endif %}"
+                     href="{% url 'home:ques' %}{{ id|default:1 }}/{{sem_id_1}}">{{sem_name}}</a></li>
+                    {% endfor %}
                     </ul>
                 </div>
                 <div class="combinations">
                     <h2>Subjects :</h2>
                     <ul>{% for subject in sub_list%}
-                        <li><a class="" href="{% url 'home:ques' %}{{ id|default:1 }}/{{sem|default:1}}/{{ subject }}">{{subject}}</a></li>
+                        <li><a class="" href="{% url 'home:ques' %}{{ id|default:1 }}/{{sem_id|default:1}}/{{ subject }}">{{subject|capfirst}}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -92,3 +91,8 @@
         </div>
     </section>
 {% endblock sections %}
+{% block j_script %}
+<script> 
+
+</script>
+{% endblock j_script %}

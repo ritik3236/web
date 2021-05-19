@@ -26,8 +26,10 @@ class HomeView(TemplateView):
     template_name = 'home/home.html'
 
     def get(self, request, *arg, **kwargs):
+        sem_list = {'1':'1st','2':'2nd','3':'3rd','4':'4th','5':'5th','6':'6th'}
         context = {
-            'context': fun_course(),
+            'course_list': fun_course(),
+            'sem_list':sem_list,
             'sub_list': txt_to_list('Plz select Course & semester 👈'),
             'qes_list': ['Plz Select Any Subject 📚 '],
         }
@@ -39,9 +41,9 @@ class QuestionView(TemplateView):
 
     def get(self, request, sem_id=1, sub_name='Hindi', *args, **kwargs):
         qes_list = ['Plz Select Subject']
-
-        if Subject.objects.filter(pk=kwargs['c_id']).exists():
-            s = Subject.objects.get(pk=kwargs['c_id'])
+        sem_list = {'1':'1st','2':'2nd','3':'3rd','4':'4th','5':'5th','6':'6th'}
+        if Subject.objects.filter(course_name_id__pk=kwargs['c_id']).exists():
+            s = Subject.objects.get(course_name_id__pk=kwargs['c_id'])
             sub_list = list(s.sub_names.split(","))
 
             ques_result = QuesPaper.objects.filter(
@@ -50,13 +52,13 @@ class QuestionView(TemplateView):
                 qes_list = list(q.fl_name.split(","))
             if qes_list[0] == 'Plz Select Subject':
                 qes_list = [' Unfortunately We Got No Qestion Paper 😔 ']
-            print(qes_list)
         else:
             sub_list = txt_to_list('Sorry We Got No Subjects 😔')
         context = {
-            'context': fun_course(),
+            'course_list': fun_course(),
             'id': kwargs['c_id'],
-            'sem': sem_id,
+            'sem_id': sem_id,
+            'sem_list': sem_list,
             'sub_list': sub_list,
             'qes_list': qes_list,
         }

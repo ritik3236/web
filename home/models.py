@@ -15,12 +15,12 @@ class Subject(models.Model):
     sub_names = models.TextField(max_length=50)
 
     def __str__(self):
-        return str(self.sub_names)
+        return f"{self.course_name} {str(self.sub_names)}"
 
 
 class QuesPaper(models.Model):
     course_name = models.ForeignKey(Course, on_delete=models.CASCADE)
-    semester = models.IntegerField(unique=True)
+    semester = models.IntegerField()
     sub_name = models.CharField(max_length=20)
     fl_name = models.CharField(max_length=30)
 
