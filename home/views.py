@@ -60,7 +60,7 @@ class QuestionView(TemplateView):
             'sem_id': sem_id,
             'sem_list': sem_list,
             'sub_list': sub_list,
+            'sub_name': sub_name,
             'qes_list': qes_list,
         }
         return render(request, self.template_name, context)
-# lst = list(sub.sub_name.split(","))

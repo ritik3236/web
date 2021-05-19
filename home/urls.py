@@ -10,5 +10,4 @@ urlpatterns = [
     path('Q_paper/<int:c_id>/', QuestionView.as_view(), name='ques'),
     path('Q_paper/<int:c_id>/<int:sem_id>/', QuestionView.as_view(), name='sem'),
     path('Q_paper/<int:c_id>/<int:sem_id>/<str:sub_name>', QuestionView.as_view(), name='subject'),
-
 ]

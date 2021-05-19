@@ -21,20 +21,20 @@
             <div class="menu-btn"><span></span><span></span><span></span></div>
         </div>
         <ul class="navigation nav-hide">
-            <li><a class="active">Q.Paper</a></li>
+            <li><a class="active" href="{% url 'home:ques' %}1#detailed_div">Q.Paper</a></li>
             <li><a class="">Solution</a></li>
             <li><a class="">News</a></li>
             <li><a class="">About Us</a></li>
             <li class=""><a class="">More</a></li>
         </ul>
     </header>
-    <!-- <div class="squares">
+    {% comment %} <div class="squares">
     <div class="square" style="--i: 0">R</div>
     <div class="square" style="--i: 2">I</div>
     <div class="square" style="--i: 4">T</div>
     <div class="square" style="--i: 6">I</div>
     <div class="square" style="--i: 8">K</div>
-  </div> -->
+    </div> {% endcomment %}
     {% block content_links %} {% endblock content_links %}
 </section>
 {% block content %}{% endblock content %}
