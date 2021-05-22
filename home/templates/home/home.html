@@ -84,9 +84,11 @@
             <div class="sub-container-2" id="result">
                 <div>
                     <h2>Result :</h2>
-                    <ul>{% for qes_list in qes_list %}
-                        <li><a href="http://www.{{ qes_list }}">{{qes_list}}</a></li>
-                        {%endfor%}
+                    <ul>
+                    {% for question in questions %}
+                        <li><a href="{{ question.file.url }}">{{question.file_name|default:"Either Subject or Question Paper Missing 😔 "}}  
+                            <span style="color:#bbdefb; font-size:small "> - {{question.file_size}}</span></a></li>
+                    {%endfor%}
                     </ul>
                 </div>
             </div>

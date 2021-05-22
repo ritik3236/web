@@ -17,7 +17,7 @@ class QuesPaperAdmin(admin.ModelAdmin):
 
 
 class QuesPaperMediaAdmin(admin.ModelAdmin):
-    list_display = ('file_name', 'fl_id', 'file_size', 'relative_path')
+    list_display = ('file_name', 'fl_id', 'file_size')
 
 
 admin.site.register(Course, CourseAdmin)
