@@ -3,9 +3,6 @@ from django.contrib import admin
 from home.models import *
 
 
-# Register your models here.
-
-
 class CourseAdmin(admin.ModelAdmin):
     readonly_fields = ['id']
 
@@ -15,10 +12,15 @@ class SubjectAdmin(admin.ModelAdmin):
 
 
 class QuesPaperAdmin(admin.ModelAdmin):
-    list_display = ('course_name', 'semester', 'sub_name', 'fl_name',)
+    list_display = ('course_name', 'semester', 'sub_name', 'fl_id',)
+    list_display_links = ('course_name', 'fl_id')
+
+
+class QuesPaperMediaAdmin(admin.ModelAdmin):
+    list_display = ('file_name', 'fl_id', 'file_size', 'relative_path')
 
 
 admin.site.register(Course, CourseAdmin)
 admin.site.register(Subject, SubjectAdmin)
 admin.site.register(QuesPaper, QuesPaperAdmin)
-# admin.site.register(Semester)
+admin.site.register(QuesPaperMedia, QuesPaperMediaAdmin)

@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-
 /*===== VARIABLES CSS =====*/
 /*===== Colors & Background =====*/
 /*===== Font and typography =====*/
@@ -133,8 +132,7 @@ header ul li a {
   border-radius: 25px;
 }
 
-header ul li a:hover,
-header ul li a.active {
+header ul li a:hover, header ul li a.active {
   background: rgba(255, 255, 255, 0.349);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
@@ -382,8 +380,7 @@ header ul li a.active {
   border-right: 2px solid #47a1f7;
 }
 
-.primary-links ul .btn-3 a:hover::before,
-.primary-links ul .btn-3 a:hover::after {
+.primary-links ul .btn-3 a:hover::before, .primary-links ul .btn-3 a:hover::after {
   width: 100%;
   height: 100%;
 }
@@ -410,24 +407,24 @@ header ul li a.active {
   transition: 0.5s;
 }
 
-.primary-links ul .btn-4 a:hover>span:nth-child(1) {
+.primary-links ul .btn-4 a:hover > span:nth-child(1) {
   animation: btn-span-1 1.5s linear infinite;
   background: linear-gradient(to right, #3d3632, #47a1f7);
 }
 
-.primary-links ul .btn-4 a:hover>span:nth-child(2) {
+.primary-links ul .btn-4 a:hover > span:nth-child(2) {
   opacity: 1;
   transition: opacity 4.5s ease;
   animation: btn-span-2 1.5s 0.75s linear infinite;
   background: linear-gradient(to bottom, #3d3632, #47a1f7);
 }
 
-.primary-links ul .btn-4 a:hover>span:nth-child(3) {
+.primary-links ul .btn-4 a:hover > span:nth-child(3) {
   animation: btn-span-3 1.5s linear infinite;
   background: linear-gradient(to left, #3d3632, #47a1f7);
 }
 
-.primary-links ul .btn-4 a:hover>span:nth-child(4) {
+.primary-links ul .btn-4 a:hover > span:nth-child(4) {
   opacity: 1;
   transition: opacity 7.5s ease;
   animation: btn-span-4 1.5s 0.75s linear infinite;
@@ -468,7 +465,7 @@ header ul li a.active {
   height: 100%;
 }
 
-.primary-links .btn-1 a span:nth-child(1):hover~span:nth-child(2) {
+.primary-links .btn-1 a span:nth-child(1):hover ~ span:nth-child(2) {
   clip-path: polygon(0% 0%, 0 0, 0 50%, 0 100%, 0% 100%);
 }
 
@@ -525,8 +522,7 @@ header ul li a.active {
   transition: 0.5s;
 }
 
-.container-1 .sub-container-1 ul li a:hover,
-.container-1 .sub-container-1 ul li a.active {
+.container-1 .sub-container-1 ul li a:hover, .container-1 .sub-container-1 ul li a.active {
   color: #3d3632;
   background: #47a1f7;
 }
@@ -898,7 +894,6 @@ footer .copyright {
     display: block;
     padding: 6rem 4vw 6vw 4vw;
   }
-
   header {
     flex-direction: column;
     top: 0;
@@ -906,9 +901,7 @@ footer .copyright {
     width: 100%;
     padding: 10px;
     grid-gap: 10px;
-    border-radius: 0;
   }
-
   header div.menu-btn {
     display: flex;
     flex-direction: column;
@@ -916,7 +909,6 @@ footer .copyright {
     right: 20px;
     top: 18px;
   }
-
   header span {
     width: 20px;
     height: 3px;
@@ -924,33 +916,26 @@ footer .copyright {
     margin: 1px 1px;
     transition: all 0.3s ease-in-out;
   }
-
   header .navigation.nav-hide {
     display: none;
   }
-
   header ul {
     flex-wrap: wrap;
     justify-content: center;
   }
-
   header ul li {
     margin: 10px;
   }
-
   .menu-btn.open span:nth-child(2) {
     transform: translateX(-10px);
     background: transparent;
   }
-
   .menu-btn.open span:nth-child(1) {
     transform: rotate(45deg) translate(3px, 4px);
   }
-
   .menu-btn.open span:nth-child(3) {
     transform: rotate(-45deg) translate(3px, -4px);
   }
-
   .content {
     flex-direction: column;
     align-items: center;
@@ -958,33 +943,27 @@ footer .copyright {
     position: relative;
     margin: 0 0 2rem 0;
   }
-
   .content .illustration {
     width: 50vw;
     transform: translate(0);
   }
-
   .content .social-button {
     position: absolute;
     top: 50%;
     right: -10px;
     z-index: 2;
   }
-
   .content .social-button ul {
     flex-direction: column;
   }
-
   .content .social-button ul a {
     font-size: 1rem;
     width: 30px;
     height: 30px;
   }
-
   .content .social-button ul a:hover {
     transform: translateX(-20px);
   }
-
   .primary-links ul .btn-1,
   .primary-links ul .btn-2,
   .primary-links ul .btn-3,
@@ -992,25 +971,20 @@ footer .copyright {
     width: 95px;
     height: 40px;
   }
-
   .primary-links .btn-2 a:hover::before {
     transform: translateY(-55px) !important;
   }
-
   .container-2 .carousel {
     overflow: hidden;
   }
-
   .container-2 .carousel .carousel-item,
   .container-2 .carousel .carousel-item--hidden {
     display: none;
   }
-
   .container-2 .carousel .carousel-item--visible {
     display: flex;
     animation: fadeOut 0.5s ease-in-out;
   }
-
   .container-2 .carousel .carousel-action {
     top: 50%;
     width: 20rem;
@@ -1019,12 +993,10 @@ footer .copyright {
     transform: translateY(-50%);
     justify-content: space-between;
   }
-
   .container-2 .carousel .carousel-action button {
     border: none;
     background: transparent;
   }
-
   .container-2 .carousel .carousel-action button span {
     display: block;
     width: 20px;
@@ -1034,31 +1006,25 @@ footer .copyright {
     border-radius: 3px;
     animation: animate 2s ease-in-out 5s 5;
   }
-
   .container-2 .carousel .carousel-action button:nth-child(1) {
     transform: rotate(135deg);
   }
-
   .container-2 .carousel .carousel-action button:nth-child(2) {
     transform: rotate(-45deg);
   }
-
   footer {
     flex-direction: column;
   }
-
   footer .copyright {
     text-align: start;
   }
 }
 
 @keyframes animate {
-
   0%,
   100% {
     transform: translateY(-30px);
   }
-
   50% {
     transform: translateY(30px);
   }
@@ -1068,7 +1034,6 @@ footer .copyright {
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
     transform: opcity linear;
@@ -1080,11 +1045,9 @@ footer .copyright {
     opacity: 0;
     transform: translate(-5px, -5px);
   }
-
   50% {
     opacity: 1;
   }
-
   100% {
     opacity: 0;
     transform: translate(5px, 5px);
@@ -1095,7 +1058,6 @@ footer .copyright {
   from {
     transform: translateX(-100%);
   }
-
   to {
     transform: translateX(100%);
   }
@@ -1105,7 +1067,6 @@ footer .copyright {
   from {
     transform: translateY(-100%);
   }
-
   to {
     transform: translateY(100%);
   }
@@ -1115,7 +1076,6 @@ footer .copyright {
   from {
     transform: translateX(100%);
   }
-
   to {
     transform: translateX(-100%);
   }
@@ -1125,10 +1085,8 @@ footer .copyright {
   from {
     transform: translateY(100%);
   }
-
   to {
     transform: translateY(-100%);
   }
 }
-
 /*# sourceMappingURL=style1.css.map */
