@@ -49,3 +49,11 @@ class QuesPaperMedia(models.Model):
             value = round(x / 1000000, 1)
             ext = ' MB'
         return str(value) + ext
+
+
+class FileUpload(models.Model):
+    name = models.CharField(max_length=30)
+    email = models.EmailField(max_length=50, blank=True)
+    document = models.FileField(upload_to='userUploaded/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    description = models.CharField(max_length=255, blank=True)

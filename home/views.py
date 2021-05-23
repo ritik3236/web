@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 
 from home.models import *
+from home.forms import *
 
 
 def sort_by_values(dic=None):
@@ -82,3 +83,30 @@ class QuestionView(TemplateView):
 
         print(questions)
         return render(request, self.template_name, context)
+
+
+class TestView(TemplateView):
+    template_name = 'home/test.html'
+
+    def get(self, request, *args, **kwargs):
+        context = {'form': TestForm()}
+        return render(request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+
+        MyTestForm = TestForm(request.POST)
+
+        print(MyTestForm.is_valid())
+        print(MyTestForm.cleaned_data)
+        context = {'form': TestForm()}
+        return render(request, self.template_name, context)
+
+        data = {
+                'f_name' : 
+                'm_name'
+                'l_name'
+                'email'
+                'dob'
+                'address'
+                'gender'
+                }
