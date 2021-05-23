@@ -23,4 +23,5 @@ class QuesPaperMediaAdmin(admin.ModelAdmin):
 admin.site.register(Course, CourseAdmin)
 admin.site.register(Subject, SubjectAdmin)
 admin.site.register(QuesPaper, QuesPaperAdmin)
+admin.site.register(FileUpload)
 admin.site.register(QuesPaperMedia, QuesPaperMediaAdmin)

@@ -52,8 +52,13 @@ class QuesPaperMedia(models.Model):
 
 
 class FileUpload(models.Model):
+    file_type_choice = [('ques', 'Question'),
+                ('notes', 'Notes'),
+                ('solution', 'Solution')]
+
     name = models.CharField(max_length=30)
     email = models.EmailField(max_length=50, blank=True)
-    document = models.FileField(upload_to='userUploaded/')
+    type = models.CharField(max_length=10, choices=file_type_choice, default='ques')
+    document = models.FileField(upload_to='userUploaded/', blank=True, null=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     description = models.CharField(max_length=255, blank=True)

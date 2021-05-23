@@ -1,3 +1,4 @@
+# from django.db.models.base import Model
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
@@ -93,20 +94,30 @@ class TestView(TemplateView):
         return render(request, self.template_name, context)
 
     def post(self, request, *args, **kwargs):
+        file_upload = FileUpload()
 
-        MyTestForm = TestForm(request.POST)
+        form = TestForm(request.POST , request.FILES)
+        files = request.FILES.getlist('document')
+        if form.is_valid():
+            for file in files:
+                file_upload.name = form.cleaned_data['name']
+                file_upload.email = form.cleaned_data['email']
+                file_upload.type = form.cleaned_data['type']
+                file_upload.document = file
+                file_upload.description = form.cleaned_data['description']
 
-        print(MyTestForm.is_valid())
-        print(MyTestForm.cleaned_data)
+                print(file_upload.document.name)
+                file_upload.save()
+            
         context = {'form': TestForm()}
         return render(request, self.template_name, context)
 
         data = {
-                'f_name' : 
+            'f_name':
                 'm_name'
                 'l_name'
                 'email'
                 'dob'
                 'address'
                 'gender'
-                }
+        }
