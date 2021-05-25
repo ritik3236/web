@@ -13,7 +13,10 @@ def quote_record(request):
         lst.append(i)
     rq  = random.sample(lst, 4)
     for i in rq:
-        image_url.append(i.author_img.url)
+        try:
+            image_url.append(i.author_img.url)
+        except Exception as e:
+            image_url.append('img not found')
     randomized_quote = serializers.serialize('json', rq)
     context = {
         'data': randomized_quote,
