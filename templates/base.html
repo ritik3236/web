@@ -50,61 +50,25 @@
                     <img src="{% static 'images/quotes-img/grey-back.jpeg' %}" alt="" class="card-img" />
                     <img id='profile_img_1' alt="" class="profile-img" />
                     <h1 id="author_1" class="name">Author</h1>
-                    <p id="quotes_1" class="quotes">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad non
-                        dolorum magni dolores quam illo, aperiam aspernatur voluptatibus!
-                        Officia repellat aliquam vero pariatur dignissimos ipsam sed!
-                        Officia reiciendis sint cumque.
-                    </p>
+                    <p id="quotes_1" class="quotes"></p>
                 </div>
                 <div class="card carousel-item">
                     <img src="{% static 'images/quotes-img/grey-back.jpeg' %}" alt="" class="card-img" />
                     <img id="profile_img_2" alt="" class="profile-img" />
                     <h1 id="author_2" class="name">Author</h1>
-                    <p id="quotes_2" class="quotes">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad non
-                        dolorum magni dolores quam illo, aperiam aspernatur voluptatibus!
-                        Officia repellat aliquam vero pariatur dignissimos ipsam sed!
-                        Officia reiciendis sint cumque.
-                    </p>
+                    <p id="quotes_2" class="quotes"></p>
                 </div>
                 <div class="card carousel-item">
                     <img src="{% static 'images/quotes-img/grey-back.jpeg' %}" alt="" class="card-img" />
                     <img id="profile_img_3" alt="" class="profile-img" />
                     <h1 id="author_3" class="name">Author</h1>
-                    <p id="quotes_3" class="quotes">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad non
-                        dolorum magni dolores quam illo, aperiam aspernatur voluptatibus!
-                        Officia repellat aliquam vero pariatur dignissimos ipsam sed!
-                        Officia reiciendis sint cumque.
-                    </p>
+                    <p id="quotes_3" class="quotes"></p>
                 </div>
                 <div class="card carousel-item">
                     <img src="{% static 'images/quotes-img/grey-back.jpeg' %}" alt="" class="card-img" />
                     <img id="profile_img_4" alt="" class="profile-img" />
                     <h1 id="author_4" class="name">Author</h1>
-                    <!-- <p class="person-title">Divider Specialist</p> -->
-                    <p id="quotes_4" class="quotes">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad non
-                        dolorum magni dolores quam illo, aperiam aspernatur voluptatibus!
-                        Officia repellat aliquam vero pariatur dignissimos ipsam sed!
-                        Officia reiciendis sint cumque.
-                    </p>
-                    <!-- <a href="" class="btn">Contact</a> -->
-                    <!-- <ul class="social-media">
-                        <li>
-                            <a href="#"><i class="fab fa-facebook-square"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                        </li>
-                    </ul> -->
+                    <p id="quotes_4" class="quotes"></p>
                 </div>
                 <div class="carousel-action">
                     <button id="carousel-button--prev"><span></span></button>
@@ -185,7 +149,7 @@
             </div>
             <div>
                 <h4>WORK WITH US:</h4>
-                <p>Wanna Contribute to project,<br>Click Here;</p>
+                <p>Wanna Contribute to <a>project</a></p>
             </div>
         </div>
         <div class="foo-links">
@@ -194,7 +158,7 @@
                 <div>
                     <li><a href="">Library</a></li>
                     <li><a href="">Notes</a></li>
-                    <li><a href="">Question Paper</a></li>
+                    <li><a href="{% url 'home:ques' %}1/#detailed_div">Question Paper</a></li>
                 </div>
                 <div>
                     <li><a href="">Solutions</a></li>

@@ -11,7 +11,7 @@ def quote_record(request):
     q = QuotesApi.objects.all()
     for i in q:
         lst.append(i)
-    rq  = random.sample(lst, 4)
+    rq = random.sample(lst, 4)
     for i in rq:
         try:
             image_url.append(i.author_img.url)
@@ -20,7 +20,7 @@ def quote_record(request):
     randomized_quote = serializers.serialize('json', rq)
     context = {
         'data': randomized_quote,
-        'image_url' : image_url
+        'image_url': image_url
     }
     return JsonResponse(
         {'context': context}, status=200

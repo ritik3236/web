@@ -112,6 +112,14 @@
       }
     }
   }
+  .container-1{
+    .sub-container-2{
+      div{
+      border-radius: 0px;
+      margin: 0 -5vw;
+      }
+    }
+  }
   .container-2 {
     .carousel {
       overflow: hidden;
@@ -162,7 +170,19 @@
 
   footer {
     flex-direction: column;
-
+    .foo-follow-visit_us{
+      gap:30px;
+      flex-direction: row;
+      justify-content: initial;
+    }
+    .foo-support-work{
+      gap : 60px;
+      flex-direction: row;
+      justify-content: initial;
+    }
+    .foo-links{
+      flex-direction: row;
+    }
     .copyright {
       text-align: start;
     }
