@@ -1,6 +1,4 @@
 from django.db import models
-
-
 # Create your models here.
 
 
@@ -40,25 +38,31 @@ class QuesPaperMedia(models.Model):
 
     @property
     def file_size(self):
-        x = self.file.size
-        y = 512000
-        if x < y:
-            value = round(x / 1000, 1)
-            ext = ' KB'
-        else:
-            value = round(x / 1000000, 1)
-            ext = ' MB'
-        return str(value) + ext
+        try:
+            x = self.file.size
+            y = 512000
+            if x < y:
+                value = round(x / 1000, 1)
+                ext = ' KB'
+            else:
+                value = round(x / 1000000, 1)
+                ext = ' MB'
+            return str(value) + ext
+        except Exception:
+            return None
 
 
 class FileUpload(models.Model):
     file_type_choice = [('ques', 'Question'),
-                ('notes', 'Notes'),
-                ('solution', 'Solution')]
+                        ('notes', 'Notes'),
+                        ('solution', 'Solution')]
 
     name = models.CharField(max_length=30)
     email = models.EmailField(max_length=50, blank=True)
-    type = models.CharField(max_length=10, choices=file_type_choice, default='ques')
-    document = models.FileField(upload_to='userUploaded/', blank=True, null=True)
+    type = models.CharField(
+        max_length=10, choices=file_type_choice, default='ques')
+    document = models.FileField(
+        upload_to='userUploaded/', blank=True, null=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     description = models.CharField(max_length=255, blank=True)
+

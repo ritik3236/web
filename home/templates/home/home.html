@@ -86,8 +86,15 @@
                     <h2>Result :</h2>
                     <ul>
                     {% for question in questions %}
-                        <li><a href="{{ question.file.url }}">{{question.file_name|default:"Either Subject or Question Paper Missing 😔 "}}  
+                    {%if question == 'Plz Select Any Subject 📚 '%}
+                    <li><a>'Plz Select Any Subject 📚 '</a></li>
+                    {% elif question == "Question Paper Missing"%}
+                    <li><a>"Question Paper Missing 😔 "</a></li>
+                    {% elif question.file_size %}
+                        <li><a href="{{ question.file.url }}">{{question.file_name}}  
                             <span style="color:#bbdefb; font-size:small "> - {{question.file_size}}</span></a></li>
+                   
+                    {%endif%}
                     {%endfor%}
                     </ul>
                 </div>

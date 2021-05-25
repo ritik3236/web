@@ -37,7 +37,7 @@ class HomeView(TemplateView):
             'course_list': func_course_list(),
             'sem_list': sem_list,
             'sub_list': txt_to_list('Plz select Course & semester 👈'),
-            'ques_list': ['Plz Select Any Subject 📚 '],
+            'questions': ['Plz Select Any Subject 📚 '],
         }
         return render(request, self.template_name, context)
 
@@ -69,7 +69,7 @@ class QuestionView(TemplateView):
             sub_list = txt_to_list('Sorry We Got No Subjects 😔')
 
         if questions == []:
-            questions = [' Either Subject or Question Paper Missing 😔 ']
+            questions = ['Question Paper Missing']
 
         context = {
             'course_list': func_course_list(),
@@ -79,10 +79,8 @@ class QuestionView(TemplateView):
             'sub_list': sub_list,
             'sub_name': sub_name,
             'questions': questions,
-
         }
 
-        print(questions)
         return render(request, self.template_name, context)
 
 
@@ -96,7 +94,7 @@ class TestView(TemplateView):
     def post(self, request, *args, **kwargs):
         file_upload = FileUpload()
 
-        form = TestForm(request.POST , request.FILES)
+        form = TestForm(request.POST, request.FILES)
         files = request.FILES.getlist('document')
         if form.is_valid():
             for file in files:
@@ -108,7 +106,7 @@ class TestView(TemplateView):
 
                 print(file_upload.document.name)
                 file_upload.save()
-            
+
         context = {'form': TestForm()}
         return render(request, self.template_name, context)
 
