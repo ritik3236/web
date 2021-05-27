@@ -1,13 +1,13 @@
 /*=== Content ===*/
+.upload_title{
+    text-align: center; 
+    margin:2rem 0;
+}
 .form {
-    margin: 2rem 3rem 0 3rem;
+    margin: 0 3rem;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
-
-    h1 {
-        text-align: center;
-    }
 
     .divider {
         top: 0;
@@ -33,7 +33,7 @@
 
         label[for=id_name],
         label[for=id_type],
-        label[for=id_file] {
+        label[for=id_document] {
             span {
                 color: red;
             }

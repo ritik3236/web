@@ -11,5 +11,5 @@ class TestForm(ModelForm):
             'document' :forms.ClearableFileInput(attrs={'multiple': True}),
             'name': forms.TextInput(attrs={'placeholder': 'Your Name... '}),
             'email': forms.TextInput(attrs={'placeholder': 'Your Email... '}),
-            'description': forms.Textarea(attrs={'rows': 3 , 'placeholder': 'Provide some information about file/doubt... '}),
+            'description': forms.Textarea(attrs={'rows': 3 , 'placeholder': 'Provide some information about file... \n Or ask Your doubt...'}),
         }

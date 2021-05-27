@@ -20,7 +20,7 @@ class QuotesApi(models.Model):
 
 
 class FileUpload(models.Model):
-    file_type_choice = [('ques', 'Question'),
+    file_type_choice = [('ques', 'Question Paper'),
                         ('notes', 'Notes'),
                         ('solution', 'Solution')]
 

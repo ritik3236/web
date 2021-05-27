@@ -1,13 +1,14 @@
 /*=== Content ===*/
+.upload_title {
+  text-align: center;
+  margin: 2rem 0;
+}
+
 .form {
-  margin: 2rem 3rem 0 3rem;
+  margin: 0 3rem;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around;
-}
-
-.form h1 {
-  text-align: center;
 }
 
 .form .divider {
@@ -35,7 +36,7 @@
 
 .form .form-card label[for=id_name] span,
 .form .form-card label[for=id_type] span,
-.form .form-card label[for=id_file] span {
+.form .form-card label[for=id_document] span {
   color: red;
 }
 
@@ -85,11 +86,13 @@
 
 /*===== Media Query & Keyframes =====*/
 @media screen and (max-width: 720px) {
+  .upload_title {
+    margin-top: 0rem;
+  }
   .form {
-    margin-top: 0;
+    margin: 0;
     flex-direction: column;
     align-items: center;
-    margin: 0;
   }
   .form .form-card {
     width: 100%;

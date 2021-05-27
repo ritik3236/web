@@ -5,11 +5,12 @@
 <link rel="stylesheet" href="{% static 'css/scss/upload.css' %}">
 {% endblock head %}
 {% block content_links %}
+<h1 class="upload_title"> Help other students by sharing <span style="color:hotpink">Question Papers, Solutions, Notes </span><br>
+    that are currently not available here</h1>
 <div class="form">
-
     <div class="form-card">
         <form action="{% url 'api:upload'%}{{count}}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
-            <h1>Upload Your Document here</h1>
+            <h3  style="text-align: center;">Submit Your Document Here</h3>
             <h4 style="text-align: center; color: green;">{{upload_result}} {% if count > 0%} +{{count}}{%endif%}</h4>
             <div class="divider"></div>
             <label for="{{ form.name.id_for_label }}">Name<span>*{{errors.name}}</span></label>
@@ -23,8 +24,9 @@
             <label for="{{ form.description.id_for_label}}">Description</label>
             <div>{{ form.description}}</div>
             <input type="submit" value="Submit">
+
+        </form>
     </div>
-    </form>
     <img class="i-img" src="{% static 'images/illustration/upload.svg' %}" alt="x">
 </div>
 {% endblock content_links %}
