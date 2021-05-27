@@ -22,13 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),    
     path('api/', include('api.urls')),    
-<<<<<<< HEAD
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-=======
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
->>>>>>> 14025852b854c7ebd84257ef36acff4c41453c0d
+
