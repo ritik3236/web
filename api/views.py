@@ -9,7 +9,6 @@ from api.forms import *
 import random
 # Create your views here.
 
-
 def quote_record(request):
     image_url = []
     q = list(QuotesApi.objects.all())
