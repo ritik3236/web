@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
+import environ
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +31,6 @@ SECRET_KEY = 'django-insecure-pixzzh4+4^c1%b0x!peguodsuu7!x!np7b%s)6_(-))7l&=-_y
 DEBUG = bool(os.environ.get("DEBUG"))
 
 ALLOWED_HOSTS = ['*']
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -76,9 +79,13 @@ WSGI_APPLICATION = 'web.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": os.environ.get("VSC_DATABASE_ENGINE"),
+        "NAME": os.environ.get("VSC_DATABASE_NAME"),
+        "USER": os.environ.get("VSC_DATABASE_USER"),
+        "PASSWORD": os.environ.get("VSC_DATABASE_PASSWORD"),
+        "HOST": os.environ.get("VSC_DATABASE_HOST"),
+        "PORT": os.environ.get("VSC_DATABASE_PORT"),
     }
 }
 
