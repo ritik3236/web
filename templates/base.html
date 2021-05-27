@@ -192,15 +192,14 @@
             .get(" {% url 'api:quote' %}")
             .then(response => {
                 var items = JSON.parse(response.data.context.data)
-                for (let i = 1; i < 5; i++) {
+                for (let i = 1; i <= Math.min(items.length, 4); i++) {
                     document.getElementById('author_' + i).innerHTML = items[i - 1].fields.author
                     document.getElementById('quotes_' + i).innerHTML = items[i - 1].fields.quote
-                    // document.getElementById('profile_img_' + i).style.backgroundImage =
-                    //     "url('http://127.0.0.1:8000/media/quote/Socrates.jpeg')";
                 }
+            
                 var image_url = response.data.context.image_url
-                console.log(image_url[0])
-                for (let i = 1; i < 5; i++) {
+                
+                for (let i = 1; i <= Math.min(image_url.length, 4); i++) {
                     document.getElementById('profile_img_' + i).style.backgroundImage = "url(" + image_url[i - 1] +
                         ")";
                 }

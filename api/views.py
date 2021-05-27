@@ -11,12 +11,9 @@ import random
 
 
 def quote_record(request):
-    lst = []
     image_url = []
-    q = QuotesApi.objects.all()
-    for i in q:
-        lst.append(i)
-    rq = random.sample(lst, 4)
+    q = list(QuotesApi.objects.all())
+    rq = random.sample(q, 4) if len(q) > 4 else q
     for i in rq:
         try:
             image_url.append(i.author_img.url)
