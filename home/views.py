@@ -3,7 +3,6 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 
 from home.models import *
-from home.forms import *
 
 
 def sort_by_values(dic=None):
@@ -21,7 +20,7 @@ def func_course_list():
         for obj in Course.objects.all().iterator():
             context.update({str(obj.id): obj.c_name})
         return sort_by_values(context).items()
-    return ('1', 'No Data')
+    return '1', 'No Data'
 
 
 # Create your views here.
@@ -68,7 +67,7 @@ class QuestionView(TemplateView):
         else:
             sub_list = txt_to_list('Sorry We Got No Subjects 😔')
 
-        if questions == []:
+        if not questions:
             questions = ['Question Paper Missing']
 
         context = {
@@ -82,4 +81,3 @@ class QuestionView(TemplateView):
         }
 
         return render(request, self.template_name, context)
-
