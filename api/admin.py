@@ -9,4 +9,9 @@ class QuotesApiAdmin(admin.ModelAdmin):
     list_display_links = ('author', 'sort_quote')
 
 
+class FileUploadAdmin(admin.ModelAdmin):
+    list_display = ('name', 'type', 'uploaded_at', 'description')
+
+
 admin.site.register(QuotesApi, QuotesApiAdmin)
+admin.site.register(FileUpload, FileUploadAdmin)

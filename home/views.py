@@ -83,39 +83,3 @@ class QuestionView(TemplateView):
 
         return render(request, self.template_name, context)
 
-
-class TestView(TemplateView):
-    template_name = 'home/test.html'
-
-    def get(self, request, *args, **kwargs):
-        context = {'form': TestForm()}
-        return render(request, self.template_name, context)
-
-    def post(self, request, *args, **kwargs):
-        file_upload = FileUpload()
-
-        form = TestForm(request.POST, request.FILES)
-        files = request.FILES.getlist('document')
-        if form.is_valid():
-            for file in files:
-                file_upload.name = form.cleaned_data['name']
-                file_upload.email = form.cleaned_data['email']
-                file_upload.type = form.cleaned_data['type']
-                file_upload.document = file
-                file_upload.description = form.cleaned_data['description']
-
-                print(file_upload.document.name)
-                file_upload.save()
-
-        context = {'form': TestForm()}
-        return render(request, self.template_name, context)
-
-        data = {
-            'f_name':
-                'm_name'
-                'l_name'
-                'email'
-                'dob'
-                'address'
-                'gender'
-        }

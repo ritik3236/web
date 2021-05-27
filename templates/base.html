@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+{% block head %}
 
 <head>
     <meta charset="UTF-8" />
@@ -13,30 +14,26 @@
     <link rel="manifest" href="{% static 'images/favicon_io/site.webmanifest' %}" />
     <script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
 </head>
+{% endblock %}
 
 <body>
     <section>
         <header class="navbar">
             <div>
-                <a role="button" onclick="window.location.reload(true)" href="{% url 'home:home' %}" class="logo">
+                <a role="button" href="{% url 'home:home' %}" class="logo">
                     <img src=" {% static '/images/favicon_io/favicon.ico' %}" alt="VSC" />VSC</a>
                 <div class="menu-btn"><span></span><span></span><span></span></div>
             </div>
             <ul class="navigation nav-hide">
-                <li><a class="active" href="{% url 'home:ques' %}1#detailed_div">Q.Paper</a></li>
-                <li><a class="">Solution</a></li>
-                <li><a class="">News</a></li>
-                <li><a class="">About Us</a></li>
-                <li class=""><a class="">More</a></li>
+                <li><a class=" {% if '/Q_' in request.path %} active {% endif %} "
+                        href="{% url 'home:ques' %}1#detailed_div">Q.Paper</a></li>
+                <li><a class="{% if '/notes' in request.path %} active {% endif %}">Notes</a></li>
+                <li><a class="{% if '/sol' in request.path %} active {% endif %}">Solutions</a></li>
+                <li><a class="{% if '/api/upl' in request.path %} active {% endif %}"
+                        href="{% url 'api:upload' %}">Upload</a></li>
+                <li><a href="/admin">Admin</a></li>
             </ul>
         </header>
-        {% comment %} <div class="squares">
-            <div class="square" style="--i: 0">R</div>
-            <div class="square" style="--i: 2">I</div>
-            <div class="square" style="--i: 4">T</div>
-            <div class="square" style="--i: 6">I</div>
-            <div class="square" style="--i: 8">K</div>
-        </div> {% endcomment %}
         {% block content_links %} {% endblock content_links %}
     </section>
     {% block content %}{% endblock content %}
@@ -204,7 +201,8 @@
                 var image_url = response.data.context.image_url
                 console.log(image_url[0])
                 for (let i = 1; i < 5; i++) {
-                    document.getElementById('profile_img_' + i).style.backgroundImage = "url(" + image_url[i-1] + ")";
+                    document.getElementById('profile_img_' + i).style.backgroundImage = "url(" + image_url[i - 1] +
+                        ")";
                 }
             })
             .catch(error => {

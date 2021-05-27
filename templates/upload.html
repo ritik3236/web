@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'css/scss/upload.css' %}">
+{% endblock head %}
+{% block content_links %}
+<div class="form">
+
+    <div class="form-card">
+        <form action="{% url 'api:upload'%}{{count}}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+            <h1>Upload Your Document here</h1>
+            <h4 style="text-align: center; color: green;">{{upload_result}} {% if count > 0%} +{{count}}{%endif%}</h4>
+            <div class="divider"></div>
+            <label for="{{ form.name.id_for_label }}">Name<span>*{{errors.name}}</span></label>
+            {{ form.name }}
+            <label for="{{ form.email.id_for_label }}">Email</label>
+            {{form.email}}
+            <label for="{{ form.type.id_for_label }}">Type<span>*</span></label>
+            {{form.type}}
+            <label for="{{form.document.id_for_label}}">Upload Your File<span>*</span></label>
+            {{form.document}}
+            <label for="{{ form.description.id_for_label}}">Description</label>
+            <div>{{ form.description}}</div>
+            <input type="submit" value="Submit">
+    </div>
+    </form>
+    <img class="i-img" src="{% static 'images/illustration/upload.svg' %}" alt="x">
+</div>
+{% endblock content_links %}

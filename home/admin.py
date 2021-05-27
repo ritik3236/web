@@ -19,12 +19,8 @@ class QuesPaperAdmin(admin.ModelAdmin):
 class QuesPaperMediaAdmin(admin.ModelAdmin):
     list_display = ('file_name', 'fl_id', 'file_size')
 
-class FileUploadAdmin(admin.ModelAdmin):
-    list_display = ('name', 'type', 'uploaded_at', 'description')
-
 
 admin.site.register(Course, CourseAdmin)
 admin.site.register(Subject, SubjectAdmin)
 admin.site.register(QuesPaper, QuesPaperAdmin)
-admin.site.register(FileUpload, FileUploadAdmin)
 admin.site.register(QuesPaperMedia, QuesPaperMediaAdmin)

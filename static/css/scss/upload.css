@@ -1,0 +1,102 @@
+/*=== Content ===*/
+.form {
+  margin: 2rem 3rem 0 3rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+.form h1 {
+  text-align: center;
+}
+
+.form .divider {
+  top: 0;
+  right: -20%;
+  width: 60%;
+  height: 2px;
+  margin-bottom: 20px;
+  position: relative;
+  background: black;
+}
+
+.form .form-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 33%;
+  padding: 28px;
+  border-radius: 10px;
+  background: #d5d7fc;
+}
+
+.form .form-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form .form-card label[for=id_name] span,
+.form .form-card label[for=id_type] span,
+.form .form-card label[for=id_file] span {
+  color: red;
+}
+
+.form .form-card input[type=text],
+.form .form-card input[type=email],
+.form .form-card input[type=file],
+.form .form-card select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form .form-card input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form .form-card input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.form .form-card input[id=id_document] {
+  background-color: white;
+}
+
+.form .form-card textarea {
+  padding: 10px;
+  width: 100%;
+  margin: 8px 0;
+  border: 1px solid #a79d9d;
+  border-radius: 4px;
+}
+
+.form .i-img {
+  width: 28%;
+}
+
+/*===== Media Query & Keyframes =====*/
+@media screen and (max-width: 720px) {
+  .form {
+    margin-top: 0;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .form .form-card {
+    width: 100%;
+    padding: 18px;
+  }
+  .form .i-img {
+    display: none;
+  }
+}
+/*# sourceMappingURL=upload.css.map */
