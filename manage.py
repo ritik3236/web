@@ -11,7 +11,7 @@ def read_env():
     https://gist.github.com/bennylope/2999704
     """
     try:
-        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env')) as f:
+        with open('.env') as f:
             content = f.read()
     except IOError:
         content = ''
@@ -27,7 +27,6 @@ def read_env():
             if m3:
                 val = re.sub(r'\\(.)', r'\1', m3.group(1))
             os.environ.setdefault(key, val)
-
 
 
 def main():

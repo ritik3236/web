@@ -1,7 +1,7 @@
 __pycache__
-env
+env/
 media
-.idea
+.idea/
 .vscode
 style1.css.map
 .env
